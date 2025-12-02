@@ -17,7 +17,7 @@ To run the docker container and setup networking run:
 docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb:/dev/bus/usb -v /your/recordingFolder/onyourcomputer:/var/www/html/recordings myavr2
 
 Recordings can be removed from the shared folder.
-
+It is also required that the timezone in the Dockerfile is updated to correct timezone or it will just schedule based on New York time.
 This command give full access to device usb on host system so adjust accordingly for your own security if needed such as docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb/001/022:/dev/bus/usb/001/022 myavr2 I just kept it the original command because usb device numbers can change with disconnects and would cause problems.
 
 
