@@ -4,7 +4,7 @@ It utilizes CRON formatting to schedule recordings such as:
 
 * Hour=starting hour
 * minute=starting minute
-* Day(1=monday,2=tuesday,3=wedneday,4=thursday,5=friday,6=saturday,7=sunday,1-7=Record dai
+* Day(1=monday,2=tuesday,3=wedneday,4=thursday,5=friday,6=saturday,7=sunday,1-7=Record daily)
 
 One issue that may happen on install is the dongle is not being recognized.
 To correct use the lsusb command to make sure that the dongle is being recognized on the Host as well as the Docker Container.
