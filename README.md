@@ -11,6 +11,9 @@ First thing is to go into the Dockerfile and change the password setup with htpa
 To Create the container I ran on a linux machine from within the myapp2 computer. I installed Docker straight from the docker website by script. docker build ---progress=plain -t myavr2
 
 To run the docker container and setup networking run docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb:/dev/bus/usb myavr2
+This command give full access to device usb on host system so adjust accordingly for your own security if needed such as 
+docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb/001/022:/dev/bus/usb/001/022 myavr2
+I just kept it the original command because usb device numbers can change with disconnects and would cause problems.   
 
 I recommend you take time to fully understand it as its a complicated setup. No warranty is provided. I am posting for coders who can maybe help with getting it to where it should be.
 
