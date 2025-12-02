@@ -13,9 +13,12 @@ docker build ---progress=plain -t myavr2
 
 To run the docker container and setup networking run: 
 
-docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb:/dev/bus/usb myavr2
+docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb:/dev/bus/usb -v /your/recordingFolder/onyourcomputer:/var/www/html/recordings myavr2
+
+Recordings can be removed from the shared folder.
 
 This command give full access to device usb on host system so adjust accordingly for your own security if needed such as docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb/001/022:/dev/bus/usb/001/022 myavr2 I just kept it the original command because usb device numbers can change with disconnects and would cause problems.
+
 
 I recommend you take time to fully understand it as its a complicated setup. No warranty is provided. I am posting for coders who can maybe help with getting it to where it should be.
 
