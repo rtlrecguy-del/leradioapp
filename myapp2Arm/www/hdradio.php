@@ -59,7 +59,6 @@ fillSelect("../txtfiles/sub.txt","substation")
     <option value="../cronkeep/src/">Manage Recordings</option>
     <option value="../sradio.php">Stream FM Radio</option>
   <option value="../hdradio.php">Stream HD Radio</option>
- <option value="../streamlink.php">Record News TV </option>
 </select>
 </br>
 <form action="" method="post">
