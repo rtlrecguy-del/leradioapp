@@ -2,7 +2,11 @@ Streams live to local devices FM HD FM SD radio and schedules recordings for lat
 
 Program filters out static using noise models for reception problems such as hiss.
 
-Device records or listens to one station at a time.   I will be trying to improve this but multiple tuners are less needed for radio.
+Device records or listens to one station at a time. 
+
+When A recording is scheduled it is generally set to run for an hour if not asked for duration.
+
+I will be trying to improve this but multiple tuners are less needed for radio.
 
 I have had success running the Docker container on older intel hardware and devices like La Frite by Libre computer.
 
