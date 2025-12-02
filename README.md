@@ -67,7 +67,7 @@ To setup Android app:
 
 To create the container I ran this command from the myapp2 directory(myapp2arm directory for ARM device like A raspberry pi clone):
 
-docker build ---progress=plain -t myavr2
+docker build -t myavr2 .
 
 To run the docker container and setup networking and storage run changing command to your liking:
 
