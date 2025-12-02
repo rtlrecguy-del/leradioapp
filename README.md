@@ -26,9 +26,14 @@ Things you may want to do:
 * If using a browser as a client you need to setup a media player listening to udp://@0.0.0.0:12345.
 * This is handled automatically on android if vlc is installed and you are using android application.
 * Set the timezone in the Dockerfile for you location. It is set to use New York time in Dockerfile currently.
-* Write down the password you set for htaccess as this will be needed in android app in the textbox.
-* Write down the user to access the app is myavr2 default password is myavr2radio
 * Access the webapp in a browser at http://ip-address-of-docker-host:8080/
+
+The default username and password for the browser page is:
+
+* Username:myavr2
+* password:myavr2radio
+
+Please change this to something of your liking in the Dockerfile beforw creating container.
 
 To setup Android app:
 
