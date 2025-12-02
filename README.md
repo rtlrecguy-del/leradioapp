@@ -13,6 +13,7 @@ It requires:
 * Local Network unless played on Docker host device.
 * Most computers including sbc's built in last 20 years have enough processing power.
 * Storage device such as hard drive on server computer.
+* This application is made to be used behind firewall on local intranet.
 
 Things you may want to do:
 
