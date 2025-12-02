@@ -1,4 +1,4 @@
-Streams live to local devices FM HD FM SD radio and schedules recordings for later listening
+Streams live local radio from RTLSDR Dongle to local devices.  Works with both FM HD FM SD radio and schedules recordings for later listening
 
 Program filters out static using noise models for reception problems such as hiss.
 
