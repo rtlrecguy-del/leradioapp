@@ -59,4 +59,4 @@ The dongle I used for this program is:
 
 [No Elec Dongle](https://www.nooelec.com/store/?srsltid=AfmBOopSf4UXkTtCjnEATcpNCeB3GxvSgWppPW0E9qMfOFou75puBHyx)
 
-Not sure if this works well with sdcards holding storage. Audio is a log less write intensive than video but I haven't tested it
+Not sure if this works well with sdcards as storage. Audio is a lot less write intensive than video but I haven't tested it
