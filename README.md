@@ -10,7 +10,7 @@ No warranty is provided. Posting so people can review code and I can try to make
 
 It requires:
 
-* Linux Intel/AMD computer that can run Docker. ARM version will be coming soon.
+* Linux Intel/AMD computer that can run Docker.
 * I am working on ARM Dockerfile version that I have posted and will update.  Has not been tested yet.
 * rtlsdr dongle
 * Client android device or web browser
