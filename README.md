@@ -45,7 +45,7 @@ To setup Android app:
 1) Enter the password in the top textbox default myavr2radio
 2) Enter http://ip-address-of-docker-host:8080 in second textbox the click save and click back to refresh.
 
-To create the container I ran the command from the myapp2 directory(myapp2arm directory for ARM device like A raspberry pi clone):
+To create the container I ran this command from the myapp2 directory(myapp2arm directory for ARM device like A raspberry pi clone):
 
 docker build ---progress=plain -t myavr2
 
