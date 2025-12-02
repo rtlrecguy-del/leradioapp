@@ -1,4 +1,5 @@
-Plays records FM HD FM SD over network and schedules recordings. It also filters out static using noise models for reception problems. Docker runs on server and client connects from phone, android tv, browser.
+Streams live to local devices FM HD FM SD radio and schedules recordings for later listening
+Program filters out static using noise models for reception problems such as hiss. Docker runs on server and client connects from phone, android tv, browser.
 
 The server where docker runs can be put anywhere on your network to get the best reception. You can listen to recordings and play radio live on the client device.
 
