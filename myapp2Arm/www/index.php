@@ -62,7 +62,6 @@ fillSelect("../txtfiles/cday.txt","dayofshow");
     <option value="../sradio.php">Stream FM Radio</option>
   <option value="../hdradio.php">Stream HD Radio</option>
  <option value="../tunerec.php">Record Tune In Radio</option>
- <option value="../streamlink.php">Record News TV </option>
 </select>
 
 </br>
