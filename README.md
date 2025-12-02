@@ -2,6 +2,10 @@ Streams live to local devices FM HD FM SD radio and schedules recordings for lat
 
 Program filters out static using noise models for reception problems such as hiss.
 
+Device records or listens to one station at a time.   I will be trying to improve this but multiple tuners are less needed for radio.
+
+I have had success running the Docker container on older intel hardware and devices like La Frite by Libre computer.
+
 Docker runs on server and client connects from phone, android tv, browser.
 
 The server where docker runs can be put anywhere on your network to get the best reception. You can listen to recordings and play radio live on the client device.
