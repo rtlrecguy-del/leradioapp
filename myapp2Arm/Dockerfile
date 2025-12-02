@@ -1,11 +1,11 @@
 FROM debian:latest
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update -y && apt install -y at p7zip-full unzip curl apache2-utils  git cmake && apt install -y apache2 libapache2-mod-php php && apt install -y build-essential pkg-config cmake autoconf libtool libao-dev libfftw3-dev && apt install -y ffmpeg openssl libmp3lame-dev git cmake libusb-1.0-0-dev sox udev usbutils
+RUN apt update -y && apt install -y at p7zip-full unzip curl apache2-utils  git cmake && apt install -y apache2 libapache2-mod-php php && apt install -y build-essential pkg-config cmake autoconf libtool libao-dev libfftw3-dev && apt install -y ffmpeg openssl librtlsdr-dev libmp3lame-dev git cmake libusb-1.0-0-dev sox udev usbutils
 RUN apt install -y cron rtl-sdr mpv
 RUN echo -e "\nblacklist dvb_usb_rtl28xxu\nblacklist rtl2832\nblacklist rtl2830" >> /etc/modprobe.d/blacklist.conf
 COPY ./www /var/www/html
 RUN htpasswd -cb /etc/apache2/.htpasswd myavr2 myavr2radio
-RUN git clone https://github.com/theori-io/nrsc5.git && cd nrsc5 && mkdir build && cd build && cmake .. && make && make install && ldconfig
+RUN git clone https://github.com/theori-io/nrsc5.git && cd nrsc5 && mkdir build && cd build && cmake .. && make install && ldconfig
 RUN git clone https://gitea.osmocom.org/sdr/rtl-sdr.git && cd rtl-sdr && mkdir build && cmake ../ -DINSTALL_UDEV_RULES=ON && make && make install && cp ../rtl-sdr.rules /etc/udev/rules.d/
 RUN rm /var/www/html/index.html
 RUN echo "www-data" > /etc/at.allow 
