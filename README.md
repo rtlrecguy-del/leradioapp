@@ -4,7 +4,15 @@ It utilizes CRON formatting to schedule recordings such as:
 
 * Hour=starting hour
 * minute=starting minute
-* Day(1=monday,2=tuesday,3=wedneday,4=thursday,5=friday,6=saturday,7=sunday,1-7=Record daily).
+* Day(1=monday,2=tuesday,3=wedneday,4=thursday,5=friday,6=saturday,7=sunday,1-7=Record dai
+
+One issue that may happen on install is the dongle is not being recognized.
+to correct use the lsusb command to make sure that the dongle is being recognized on the Host as well as the Docker Container.
+It might be required that An udev .rules file will be needed on Host computer to grant access to dongle.
+
+A good place to find local stations to you is to look up your FM stations on wikipdedia by state and look up your HD Radio stations at:
+
+https://hdradio.com/
   
 All recordings are setup as repeating.  Remove from CRON in app if not wanting recordings.
  
