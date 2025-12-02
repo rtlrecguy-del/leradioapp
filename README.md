@@ -1,6 +1,6 @@
 # leradioapp
 Plays records FM HD FM SD over network and schedules recordings.
-It also used noise models to remove reception problems.
+It also filters out static using noise models for reception problems.
 Docker runs on server and client connects from phone, android tv, browser.
 
 Explantion of program: This is all experimental. So use accordingly as not production ready but hope it is someday. It was coded on an intel computer but has worked at different levels on raspberry pi clones with limited power. It requires an rtlsdr dongle. To use on raspberry Pi there might need to be a few changes to installing the programs such as rtlsdr and nrsc5.
