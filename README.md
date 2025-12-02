@@ -1,6 +1,8 @@
 # leradioapp
 Plays records FM HD FM SD over network and schedules recordings. It also filters out static using noise models for reception problems. Docker runs on server and client connects from phone, android tv, browser.
 
+The server where docker runs can be put anywhere on your network to get the best reception and the app can listen to recordings and live on the client device.
+
 Explantion of program: This is all experimental. So use accordingly as not production ready but hope it is someday. It was coded on an intel computer but has worked at different levels on raspberry pi clones with limited power. It requires an rtlsdr dongle. To use on raspberry Pi there might need to be a few changes to installing the programs such as rtlsdr and nrsc5.
 
 First thing is to go into the Dockerfile and change the password setup with htpasswd command to something of your liking. You will need that to sign into webapp from android or from browser. Once a live stream is started from the app you also need a media player that the client listens to at udp://@0.0.0.0:12345. This is handled automatically on android if vlc is installed.
