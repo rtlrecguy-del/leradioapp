@@ -1,5 +1,12 @@
-Streams live local radio from RTLSDR Dongle to local devices.  Works with both FM HD FM SD radio and schedules recordings for later listening
+Streams live local radio from RTLSDR Dongle to local devices.  Works with both FM HD FM SD radio and schedules recordings for later listening.
 
+It utilizes CRON formatting to schedule recordings such as:
+
+* Hour=starting hour
+* minute=starting minute
+* Day=1=monday,2=tuesday,3=wednesday,4=thursday,5=friday,6=saturday,7=sunday,1-7=Record daily.
+* All recordings are setup as repeating.  Remove from CRON in app if not wanting recordings.
+ 
 Program filters out static using noise models for reception problems such as hiss.
 
 Device records or listens to one station at a time. 
