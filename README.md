@@ -71,4 +71,4 @@ The dongle I used for this program is:
 
 Not sure if this works well with sdcards as storage. Audio is a lot less write intensive than video but I haven't tested it
 
-Any comments or sugestions please send me a message.
+Any comments or sugestions please send me a message.  This is an expiremental program in development.
