@@ -22,3 +22,6 @@ The app webpage is only protected by htaccess which you set a password in the Do
 Android requires that vlc is installed.   
 
 To access the webpage you will have to use the address of the docker host and either browser on webbrowser to http://ipaddress:8080.   On android app you place this address in application textbox and click save and then refresh with back button.  You only do this once.
+
+
+View Android APP at https://www.youtube.com/watch?v=p9i0KOLc6vE
