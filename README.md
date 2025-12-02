@@ -40,8 +40,10 @@ docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb:/dev/bus/usb -
 
 Recordings can be removed from the shared folder but not from application.
 
-If you want to limit access to only the rtlsdr dongle usb on host modify command similar to below.  You can find this info using command lsusb.
+To prevent all usb devices to be accessible between docker and host.  You can edit to allow only specific USBs.  You can find this info using command lsusb.
+
 docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb/001/022:/dev/bus/usb/001/022 myavr2 
+
 where /001/022 is the specific usb where the dongle is located.
 
 No warranty is provided. This is just a project I am working on and would like to share for other people to test and help me improve. I am not resposible for anything not getting recorded. All the code for the Server is here to review on github.
