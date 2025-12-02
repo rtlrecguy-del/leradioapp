@@ -3,7 +3,7 @@ docker container to record and play radio over network with rtlsdr dongles.    H
 Explantion of program:
 This is all experimental. So use accordingly as not production ready but hope it is someday. It was coded on an intel computer but has worked at different levels on raspberry pi clones with limited power. It requires an rtlsdr dongle. To use on raspberry Pi there might need to be a few changes to installing the programs such as rtlsdr and nrsc5.
 
-First thing is to go into the Dockerfile and change the password setup with htpasswd command to something of your liking. You will need that to sign into webapp from android or from browser. Once a live stream is started from the app you also need a media player that the client listens to at udp://@0.0.0.0:1234. This is handled automatically on android if vlc is installed.
+First thing is to go into the Dockerfile and change the password setup with htpasswd command to something of your liking. You will need that to sign into webapp from android or from browser. Once a live stream is started from the app you also need a media player that the client listens to at udp://@0.0.0.0:12345. This is handled automatically on android if vlc is installed.
 
 To Create the container I ran on a linux machine from within the myapp2 computer. I installed Docker straight from the docker website by script. docker build ---progress=plain -t myavr2
 
@@ -14,3 +14,8 @@ I recommend you take time to fully understand it as its a complicated setup. No 
 View Android APP at https://www.youtube.com/watch?v=p9i0KOLc6vE
 
 It should show correctly on browser on a phone, tablet, laptop, computer and android.
+
+The app webpage is only protected by htaccess which you set a password in the Dockerfile on the htpasswd command.    The username is myavr2 and you will need the password you created to put into android app password box or to access the webpage from a browser.
+Android requires that vlc is installed.   
+
+To access the webpage you will have to use the address of the docker host and either browser on webbrowser to http://ipaddress:8080.   On android app you place this address in application textbox and click save and then refresh with back button.  You only do this once.
