@@ -11,7 +11,7 @@ It requires:
 * Client android device or web browser
 * Media player that can play udp stream.
 * Local Network unless played on Docker host device.
-* Most computers including sbc's build in last 20 years have enough processing power.
+* Most computers including sbc's built in last 20 years have enough processing power.
 * Storage device such as hard drive on server computer.
 
 Things you may want to do:
