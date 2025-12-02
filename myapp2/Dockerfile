@@ -24,7 +24,6 @@ EXPOSE 12345
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R +x /var/www/html/scripts/
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-RUN echo "Your IP Server Address is $(hostname -I | awk '{print $1}'):8080"
 RUN echo "Your webpassword is myavr2radio"
 ENTRYPOINT ["/entrypoint.sh"]
  
