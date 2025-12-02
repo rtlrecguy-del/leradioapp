@@ -37,6 +37,7 @@ docker build ---progress=plain -t myavr2
 To run the docker container and setup networking and storage run changing command to your liking:
 
 docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb:/dev/bus/usb -v /your/recordingFolder/onyourcomputer:/var/www/html/recordings myavr2
+
 Recordings can be removed from the shared folder but not from application.
 
 If you want to limit access to only the rtlsdr dongle usb on host modify command similar to below.  You can find this info using command lsusb.
