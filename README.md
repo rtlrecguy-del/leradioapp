@@ -36,7 +36,7 @@ No warranty is provided. Posting so people can review code and I can try to make
 
 It requires:
 
-* Debian computer for Docker Host(May work on others with changes to configuration)
+* Debian or Ubuntu computer for Docker Host(May work on others with changes to configuration)
 * rtlsdr dongle
 * Client android device or web browser
 * Media player that can play udp stream.
@@ -44,6 +44,7 @@ It requires:
 * Most computers including SBC's built in last 20 years have enough processing power.
 * Storage device such as hard drive on server computer.
 * This application is made to be used behind firewall on local intranet.
+* Some configuration may be required as this has been in development for very short time.
 
 Things you may want to do:
 
