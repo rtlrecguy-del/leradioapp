@@ -24,10 +24,10 @@ $vardayofshow=$_POST['dayofshow'];
 $vargain=$_POST['gain'];
 $varminute=$_POST['minute'];
 
-
+$varsudo="sudo";
 $varcommand="/bin/bash /var/www/html/scripts/cron.sh";
 $varspace=" ";
-$f=$varcommand.$varspace.$varcommandarams.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$vargain.$varspace.$varminute;
+$f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$vargain.$varspace.$varminute;
 echo "$f";
 $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
