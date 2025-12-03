@@ -1,6 +1,6 @@
 FROM debian:latest
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update -y && apt install -y at p7zip-full unzip curl apache2-utils librtlsdr-dev git cmake && apt install -y apache2 libapache2-mod-php php && apt install -y build-essential cmake autoconf libtool libao-dev libfftw3-dev && apt install -y ffmpeg openssl libmp3lame-dev git cmake pkg-config libusb-1.0-0-dev sox udev usbutils
+RUN apt update -y && apt install -y at p7zip-full unzip curl apache2-utils librtlsdr-dev git cmake && apt install -y apache2 sudo libapache2-mod-php php && apt install -y build-essential cmake autoconf libtool libao-dev libfftw3-dev && apt install -y ffmpeg openssl libmp3lame-dev git cmake pkg-config libusb-1.0-0-dev sox udev usbutils
 RUN apt install -y cron rtl-sdr mpv
 RUN echo -e "\nblacklist dvb_usb_rtl28xxu\nblacklist rtl2832\nblacklist rtl2830" >> /etc/modprobe.d/blacklist.conf
 COPY ./www /var/www/html
