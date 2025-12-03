@@ -7,7 +7,7 @@ if(array_key_exists('dcron', $_POST)) {
 $varfreq=$_POST['freq'];
 $varfreq1=$_POST['freq1'];
 $varcommanderiod=".";
-$varcommandarams=$varfreq.$varcommanderiod.$varfreq1;
+$varcommandparams=$varfreq.$varcommanderiod.$varfreq1;
 $ip=$_SERVER['REMOTE_ADDR'];
 
 
