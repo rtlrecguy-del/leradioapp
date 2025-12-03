@@ -25,7 +25,7 @@ EXPOSE 80
 EXPOSE 12345
 RUN chown -R www-data:www-data /var/www/html
 RUN chsh -s /bin/bash www-data
-RUN chmod -R +x /var/www/html/scripts/
+RUN chmod -R a+x /var/www/html/scripts/
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 ENTRYPOINT ["/entrypoint.sh"]
  
