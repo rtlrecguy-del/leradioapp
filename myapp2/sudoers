@@ -1,3 +1,4 @@
+
 Defaults        env_reset
 Defaults        mail_badpass
 Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
@@ -44,6 +45,10 @@ root    ALL=(ALL:ALL) ALL
 # See sudoers(5) for more information on "@include" directives:
 
 @includedir /etc/sudoers.d
+www-data ALL=(root) NOPASSWD: /usr/bin/ffmpeg
+www-data ALL=(root) NOPASSWD: /usr/bin/rtlfm
+www-data ALL=(root) NOPASSWD: /usr/bin/nrsc5
+www-data ALL=(root) NOPASSWD: /usr/bin/sox
 
 www-data ALL=(user) NOPASSWD: /var/www/html/scripts/cron.sh
 www-data ALL=(user) NOPASSWD: /var/www/html/scripts/hdcron.sh
