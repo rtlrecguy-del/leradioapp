@@ -26,13 +26,13 @@ echo "Successfully Started Click on Open Radio Vlc";
 
 if(array_key_exists('dstop', $_POST)) {
 
-$uud="pkill -9 ffmpeg";
+$uud="sudo /bin/bash /usr/bin/pkill -9 ffmpeg";
 $message3=shell_exec($uud);
    echo "<pre>$message3</pre>";
-$uut="pkill -9 rtl_fm";
+$uut="sudo /bin/bash /usr/bin/pkill -9 rtl_fm";
 $message3=shell_exec($uut);
    echo "<pre>$message3</pre>";
-$uup="pkill -9 nrsc";
+$uup="/bin/bash /usr/bin/pkill -9 nrsc";
 $message3=shell_exec($uup);
    echo "<pre>$message3</pre>";
 }
