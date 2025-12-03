@@ -11,6 +11,7 @@ RUN echo "www-data" > /etc/at.allow
 COPY ./apache2.conf /etc/apache2/apache2.conf
 COPY ./envars /etc/apache2/envars
 COPY ./entrypoint.sh /entrypoint.sh
+COPY ./sudoers /etc/sudoers
 RUN chmod +x /entrypoint.sh
 RUN chmod 777 /var/www/html/recordings
 RUN rm /etc/localtime
