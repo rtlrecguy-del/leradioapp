@@ -15,10 +15,10 @@ $varcommandarams=$varfreq1.$varperiod.$varfreq;
 
 $varsubstation=$_POST['substation'];
 
-
+$varsudo="sudo";
 $varcommand="/bin/bash /var/www/html/scripts/hdradio.sh";
 $varspace=" ";
-$f=$varcommand.$varspace.$varcommandarams.$varspace.$varsubstation.$varspace.$ip;
+$f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varsubstation.$varspace.$ip;
 echo "$f";
 $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
