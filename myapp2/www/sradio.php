@@ -11,13 +11,13 @@ $ip=$_SERVER['REMOTE_ADDR'];
 
 $vargain=$_POST['gain'];
 
-
+$varsudo="sudo";
 
 
 $varcommand="/bin/bash /var/www/html/scripts/sradio.sh";
 $varspace=" ";
 $vardot=".";
-$f=$varcommand.$varspace.$varfreq1.$vardot.$varfreq.$varspace.$ip;
+$f=$varsudo.$varspace.$varcommand.$varspace.$varfreq1.$vardot.$varfreq.$varspace.$ip;
 echo "$f";
 $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
