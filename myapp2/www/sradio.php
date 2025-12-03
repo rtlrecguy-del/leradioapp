@@ -6,8 +6,6 @@ $message3=shell_exec('echo "test"');
 if(array_key_exists('dcron', $_POST)) {
 $varfreq=$_POST['freq'];
 $varfreq1=$_POST['freq1'];
-$varcommanderiod=".";
-$varcommandparams=$varfreq.$varcommanderiod.$varfreq1;
 $ip=$_SERVER['REMOTE_ADDR'];
 
 
@@ -19,7 +17,7 @@ $vargain=$_POST['gain'];
 $varcommand="/bin/bash /var/www/html/scripts/sradio.sh";
 $varspace=" ";
 $vardot=".";
-$f=$varcommand.$varspace.$varcommandparams.$varspace.$varfreq1.$vardot.$varfreq.$varspace.$ip;
+$f=$varcommand.$varspace.$varfreq1.$vardot.$varfreq.$varspace.$ip;
 echo "$f";
 $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
