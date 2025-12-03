@@ -36,7 +36,7 @@ No warranty is provided. Posting so people can review code and I can try to make
 
 It requires:
 
-* Linux computer recommended unless you want to work on it to get it working on Windows.
+* Debian computer for Docker Host(May work on others with changes to configuration
 * rtlsdr dongle
 * Client android device or web browser
 * Media player that can play udp stream.
