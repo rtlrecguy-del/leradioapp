@@ -24,11 +24,12 @@ $varhour=$_POST['hour'];
 $vardayofshow=$_POST['dayofshow'];
 $vargain=$_POST['gain'];
 $varminute=$_POST['minute'];
+$varsudo="sudo";
 
 
 $varcommand="/bin/bash /var/www/html/scripts/hdcron.sh";
 $varspace=" ";
-$f=$varcommand.$varspace.$varcommandarams.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$varsubstation.$varspace.$varminute;
+$f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$varsubstation.$varspace.$varminute;
 echo "$f";
 $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
