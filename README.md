@@ -1,3 +1,5 @@
+View Android APP in action at: <a href="https://youtu.be/9CAmN4XSIiY">https://youtu.be/9CAmN4XSIiY</a>
+
 Streams live local radio from RTLSDR Dongle to local devices.  Works with both FM HD FM SD radio and schedules recordings for later listening.
 
 It utilizes CRON formatting to schedule recordings such as:
@@ -81,8 +83,6 @@ docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb/001/022:/dev/b
 where /001/022 is the specific usb where the dongle is located.
 
 This is A project I am working on and would like to share for other people to test and help me improve. I am not resposible for anything not getting recorded. All the code for the Server is here to review on github.
-
-View Android APP in action at: <a href="https://youtu.be/9CAmN4XSIiY">https://youtu.be/9CAmN4XSIiY</a>
 
 The dongle I used for this program is:
 
