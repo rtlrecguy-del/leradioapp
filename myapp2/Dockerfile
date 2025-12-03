@@ -27,5 +27,6 @@ RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R +x /var/www/html/scripts/
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN echo "Your webpassword is myavr2radio"
+USER www-data
 ENTRYPOINT ["/entrypoint.sh"]
  
