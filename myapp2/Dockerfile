@@ -23,6 +23,7 @@ RUN php composer.phar create-project cronkeep/cronkeep --keep-vcs -s dev /var/ww
 EXPOSE 80
 EXPOSE 12345
 RUN chown -R www-data:www-data /var/www/html
+RUN usermod -s /bin/bash www-data
 RUN chmod -R +x /var/www/html/scripts/
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN echo "Your webpassword is myavr2radio"
