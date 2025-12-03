@@ -22,6 +22,7 @@ RUN dpkg-reconfigure tzdata
 RUN curl -sS https://getcomposer.org/installer | php
 RUN php composer.phar create-project cronkeep/cronkeep --keep-vcs -s dev /var/www/html/cronkeep
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
+RUN usermod -aG sudo www-data
 EXPOSE 80
 EXPOSE 12345
 RUN chown -R www-data:www-data /var/www/html
