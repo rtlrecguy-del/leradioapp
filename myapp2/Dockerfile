@@ -10,7 +10,6 @@ RUN rm /var/www/html/index.html
 RUN echo "www-data" > /etc/at.allow 
 COPY ./apache2.conf /etc/apache2/apache2.conf
 COPY ./envars /etc/apache2/envars
-COPY ./sudoers /etc/sudoers
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 RUN chmod 777 /var/www/html/recordings
