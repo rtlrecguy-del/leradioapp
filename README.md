@@ -82,7 +82,7 @@ where /001/022 is the specific usb where the dongle is located.
 
 This is A project I am working on and would like to share for other people to test and help me improve. I am not resposible for anything not getting recorded. All the code for the Server is here to review on github.
 
-View Android APP in action at: https://www.youtube.com/watch?v=p9i0KOLc6vE
+View Android APP in action at: <a href="https://youtu.be/9CAmN4XSIiY">https://youtu.be/9CAmN4XSIiY</a>
 
 The dongle I used for this program is:
 
