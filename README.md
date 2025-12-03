@@ -10,9 +10,9 @@ One issue that may happen on install is the dongle is not being recognized.
 To correct use the lsusb command to make sure that the dongle is being recognized on the Host as well as the Docker Container.
 It might be required that An udev .rules file will be needed on Host computer to grant access to dongle.
 
-A good place to find local stations to you is to look up your FM stations on wikipdedia by state and look up your HD Radio stations at:
+A good place to find local stations to you is to look up your FM stations on Wikipedia by state and look up your HD Radio stations at:
 
-https://hdradio.com/
+https://hdradio.com
   
 All recordings are setup as repeating.  Remove from CRON in app if not wanting recordings.
  
@@ -34,12 +34,12 @@ No warranty is provided. Posting so people can review code and I can try to make
 
 It requires:
 
-* Linux computer recommended unlesss you want to work on it to get it working on Windows.
+* Linux computer recommended unless you want to work on it to get it working on Windows.
 * rtlsdr dongle
 * Client android device or web browser
 * Media player that can play udp stream.
 * Local Network unless played on Docker host device.
-* Most computers including sbc's built in last 20 years have enough processing power.
+* Most computers including SBC's built in last 20 years have enough processing power.
 * Storage device such as hard drive on server computer.
 * This application is made to be used behind firewall on local intranet.
 
@@ -57,7 +57,7 @@ The default username and password for the browser page is:
 * Username:myavr2
 * password:myavr2radio
 
-Please change this to something of your liking in the Dockerfile beforw creating container.
+Please change this to something of your liking in the Dockerfile before creating container.
 
 To setup Android app:
 
@@ -90,4 +90,4 @@ The dongle I used for this program is:
 
 Not sure if this works well with sdcards as storage. Audio is a lot less write intensive than video but I haven't tested it
 
-Any comments or sugestions please send me a message.  This is an expiremental program in development.
+Any comments or suggestions please send me a message.  This is an experimental program in development.
