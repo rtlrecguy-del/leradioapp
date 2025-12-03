@@ -1,5 +1,5 @@
 #!/bin/bash
 
     cron -f &
-
-    exec apache2ctl -D FOREGROUND
+su - www-data -c "exec apache2ctl -D FOREGROUND"
+    
