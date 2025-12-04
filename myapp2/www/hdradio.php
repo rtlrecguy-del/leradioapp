@@ -30,6 +30,9 @@ $f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varsubst
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
 }
+else {
+   echo "Data not validated":
+      }
 }if(array_key_exists('dstop', $_POST)) {
 
 $uud="sudo /bin/bash /usr/bin/pkill -9 ffmpeg";
