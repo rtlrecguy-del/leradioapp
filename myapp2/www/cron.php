@@ -1,8 +1,5 @@
 <?php
 if(isset($_POST['submit'])) {
-$u=$_POST['del'];
-$ee="/bin/bash /home/ted/cronp.sh ";
-$ii=$ee.$u;
 $message=shell_exec('echo "test"');
       echo "<pre>$message</pre>";
 }
