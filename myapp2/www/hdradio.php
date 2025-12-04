@@ -18,12 +18,19 @@ $varsubstation=$_POST['substation'];
 $varsudo="sudo";
 $varcommand="/bin/bash /var/www/html/scripts/hdradio.sh";
 $varspace=" ";
+   $varpatternsudo="sudo";
+   $varpatterncommand="/bin/bash /var/www/html/scripts/hdradio.sh";
+   $varpatternfreq1="/^\d{1,2}\.\d{1}$/";
+   $varpatternfreq="/^\d{1,2}\.\d{1}$/";
+   $varpatternsubstation="/[1-4]/";
+   $varpatternip="'/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/';";
 $f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varsubstation.$varspace.$ip;
-echo "$f";
-$message3=shell_exec($f);
+   if (preg_match($pattern1, $varsudo) && preg_match($pattern2, $varcommand) && if preg_match($pattern1, $varfreq1) && preg_match($pattern2, $varfreq)) if preg_match($varpatternip, $ip) && preg_match($varpatternsubstation, $varsubstation)) {
+  echo "Successfully Started.  Open VLC from client to address udp://@0.0.0.0:12345";
+   $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
 }
-if(array_key_exists('dstop', $_POST)) {
+}if(array_key_exists('dstop', $_POST)) {
 
 $uud="sudo /bin/bash /usr/bin/pkill -9 ffmpeg";
 $message3=shell_exec($uud);
