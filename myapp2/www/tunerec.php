@@ -5,6 +5,14 @@ $message3=shell_exec('echo "test"');
 }
 
 if(array_key_exists('dcron', $_POST)) {
+   $programName = "ffmpeg"; 
+$command = "ps aux | grep " . escapeshellarg($programName) . " | grep -v grep";
+$output = shell_exec($command);
+
+if (!empty($output)) {
+    echo "The program '" . $programName . "' is running already.\n";
+} 
+
  $varstation=$_POST['station'];
 $varhour=$_POST['hour'];
 $vardayofshow=$_POST['dayofshow'];
