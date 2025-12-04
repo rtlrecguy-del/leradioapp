@@ -24,12 +24,11 @@ $varcommand="/bin/bash /var/www/html/scripts/sradio.sh";
 $varspace=" ";
 $vardot=".";
 $f=$varsudo.$varspace.$varcommand.$varspace.$varfreq1.$vardot.$varfreq.$varspace.$ip;
-   $varpatternsudo="sudo";
-   $varpatterncommand="/bin/bash /var/www/html/scripts/sradio.sh";
-   $varpatternfreq1="^\d{1,3}\.\d{1}$";
-   $varpatternfreq="^\d{1,3}\.\d{1}$";
-   $varpatternip="^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$";
-if (preg_match($varpatternsudo, $varsudo) && preg_match($varpatterncommand, $varcommand) && preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && preg_match($varpatternip, $ip)) {
+   $varpatternfreq1="/^\d{1,3}/";
+   $varpatterngain="/^\d{1,3}\.\d{1}$/";
+   $varpatternfreq="/^\d{1,3}\.\d{1}$/";
+   $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
+if ((preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && preg_match($varpatterngain, $vargain) && preg_match($varpatternip, $ip))) {
   echo "Successfully Started Open VLC on client at address udp://@0.0.0.0:12345";
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
