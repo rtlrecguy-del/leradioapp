@@ -22,8 +22,9 @@ RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/sradio.sh*" >> 
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/srecordfm1.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/tuneincron.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/tuneinradio.sh*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /bin/bin/pkill mpv" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill rtl_fm" >> /etc/sudoers
-RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill ffmpeg*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill ffmpeg" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill nrsc5" >> /etc/sudoers
 RUN rm /etc/localtime
 RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
