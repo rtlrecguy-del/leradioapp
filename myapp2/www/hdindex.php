@@ -31,7 +31,6 @@ $varsudo="sudo";
 $varcommand="/bin/bash /var/www/html/scripts/hdcron.sh";
 $varspace=" ";
 $f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$varsubstation.$varspace.$varminute;
- $varpatternsudo="sudo";
    $varpatternfreq1="/^\d{1,3}$/";
    $vargain="/^\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}$/";
