@@ -15,7 +15,7 @@ $vardel=$_POST['del'];
 $varspace=" ";
 $varcommand="/bin/bash /var/www/html/scripts/cronp.sh";
 $f=$varcommand.$varspace.$vardel;
-vardelpattern="/^(?:[1-9]|[1-5]\d|24)$/";
+$vardelpattern="/^(?:[1-9]|[1-5]\d|24)$/";
 if (preg_match($vardelpattern, $vardel) {
 $message1=shell_exec($f);
    echo "<pre>$message1</pre>";
