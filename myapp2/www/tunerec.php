@@ -13,7 +13,6 @@ $vartinid=$_POST['tinid'];
 $varminute=$_POST['minute'];
 $command="/bin/bash /var/www/html/scripts/tuneincron.sh";
 $varspace=" ";
-$varsudo="sudo";
 $f=$varsudo.$varspace.$command.$varspace.$varstation.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$vartinid.$varspace.$varminute;
    $varpatterntinid="/^([+-]?(?=\d|\.\d)\d*(\.\d*)?|.{0,13})$/";
    $varpatternstation="/[1-4]/";
