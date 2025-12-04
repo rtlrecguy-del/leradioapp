@@ -15,8 +15,9 @@ It might be required that An udev .rules file will be needed on Host computer to
 A good place to find local stations to you is to look up your FM stations on Wikipedia by state and look up your HD Radio stations at:
 
 https://hdradio.com
-  
-All recordings are setup as repeating.  Remove from CRON in app if not wanting recordings.
+
+The recordings are not accessible from the app.   The shared directory on Host should be setup to share over the networt to a media player like VLC.
+All recordings are setup as repeating.  Remove from CRON in app if you want to cancel a scheduled recording.
  
 Program filters out static using noise models for reception problems such as hiss.
 
