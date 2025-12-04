@@ -5,7 +5,7 @@ $message3=shell_exec('echo "test"');
 }
 
 if(array_key_exists('dcron', $_POST)) {
-
+$varsudo="sudo";
  $varstation=$_POST['station'];
 $varhour=$_POST['hour'];
 $vardayofshow=$_POST['dayofshow'];
