@@ -78,7 +78,7 @@ To run the docker container and setup networking and storage run changing comman
 
 docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb:/dev/bus/usb -v /your/recordingFolder/onyourcomputer:/var/www/html/recordings myavr2
 
-Recordings can be removed from the shared folder but not from application.
+The volume on your computer should match the same UID or GID as the www-data user in the dockerfile is set.
 
 To prevent all usb devices to be accessible between docker and host.  You can edit to allow only specific USBs.  You can find this info using command lsusb.
 
