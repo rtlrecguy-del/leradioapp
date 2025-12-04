@@ -11,14 +11,16 @@ $message3=shell_exec('crontab -l');
    echo "<pre>$message3</pre>";
 }
 if(array_key_exists('dcronbtn', $_POST)) {
-$u=$_POST['del'];
+$vardel=$_POST['del'];
 $varspace=" ";
-$ee="/bin/bash /var/www/html/scripts/cronp.sh";
-$ii=$ee.$varspace.$u;
-vardelpattern="/^(?:[1-9]|[1-5]\d|24)$/"
-$message1=shell_exec($ii);
+$varcommand="/bin/bash /var/www/html/scripts/cronp.sh";
+$f=$varcommand.$varspace.$vardel;
+vardelpattern="/^(?:[1-9]|[1-5]\d|24)$/";
+if (preg_match($vardel, $vardelpattern) {
+$message1=shell_exec($f);
    echo "<pre>$message1</pre>";
-}
+ echo "Successfully deleted";
+}}
 
 
 ?>
