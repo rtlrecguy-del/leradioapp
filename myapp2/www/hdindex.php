@@ -33,7 +33,7 @@ $f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varhour.
  $varpatternsudo="sudo";
    $varpatterncommand="/bin/bash /var/www/html/scripts/cron.sh";
    $varpatternfreq1="/^\d{1,2}\.\d{1}$'/^.{1,3}$/'/";
-   $vargain="/^\d{1,2}\.\d{1}
+   $vargain="/^\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,2}\.\d{1}$/";
    $varpatternhour="/[1-24]/";
    $varpatternminute="/[1-60]/;
@@ -47,15 +47,6 @@ if (preg_match($varpatternsudo, $varsudo) && preg_match($varpatterncommand, $var
 }
 else { 
    echo "Your input didn't validate";
-}
-   
-   
-   
-   
-   
-   echo "$f";
-$message3=shell_exec($f);
-   echo "<pre>$message3</pre>";
 }
 
 
