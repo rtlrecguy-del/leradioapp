@@ -64,7 +64,6 @@ fillSelect("../txtfiles/g1.txt","gain");
     <option value="../cron.php">Manage Recordings</option>
     <option value="../sradio.php">Stream FM Radio</option>
   <option value="../hdradio.php">Stream HD Radio</option>
- <option value="../tunerec.php">Record Tune In Radio</option>
 </select>
 </br>
 <form action="" method="post">
