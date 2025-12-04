@@ -44,7 +44,7 @@ $message3=shell_exec($uud);
 $uut="sudo /usr/bin/pkill rtl_fm";
 $message3=shell_exec($uut);
    echo "<pre>$message3</pre>";
-$uup="/usr/bin/pkill nrsc";
+$uup="/usr/bin/pkill nrsc5";
 $message3=shell_exec($uup);
    echo "<pre>$message3</pre>";
 }
