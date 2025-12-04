@@ -27,7 +27,6 @@ RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill ffmpeg*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill nrsc5" >> /etc/sudoers
 RUN rm /etc/localtime
 RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
-RUN chmod g+s /var/www/html/recordings
 RUN a2enmod rewrite
 RUN dpkg-reconfigure tzdata
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
@@ -35,7 +34,6 @@ RUN usermod -aG sudo www-data
 EXPOSE 80
 EXPOSE 12345
 RUN chown -R www-data:www-data /var/www/html
-RUN chsh -s /bin/bash www-data
 RUN chmod -R a+x /var/www/html/scripts/
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 ENTRYPOINT ["/entrypoint.sh"]
