@@ -60,7 +60,6 @@ else {
 <select id="selectbox" name="" onchange="javascript:location.href = this.value;">
 <option value="">Choose Page To Go To:</option>
     <option value="../index.php">Record Radio Waves</option>
-    <option value="../recordings">Open Recordings</option>
     <option value="../hdindex.php">Record HD Radio</option>
     <option value="../cronkeep/src">Manage Recordings</option>
     <option value="../sradio.php">Stream FM Radio</option>
