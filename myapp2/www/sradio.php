@@ -4,12 +4,7 @@ $message3=shell_exec('echo "test"');
    echo "<pre>$message</pre>";
 }
 if(array_key_exists('dcron', $_POST)) {
-$command = "sudo ps aux | grep ffmpeg | grep -v grep";
-$output = shell_exec($command);
 
-if (!empty($output)) {
-    echo "The program '" . $programName . "' is running already.\n";
-} 
 $varfreq=$_POST['freq'];
 $varfreq1=$_POST['freq1'];
 $ip=$_SERVER['REMOTE_ADDR'];
