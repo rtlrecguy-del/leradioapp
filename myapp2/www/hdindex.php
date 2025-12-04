@@ -32,16 +32,14 @@ $varcommand="/bin/bash /var/www/html/scripts/hdcron.sh";
 $varspace=" ";
 $f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$varsubstation.$varspace.$varminute;
  $varpatternsudo="sudo";
-   $varpatterncommand="/bin/bash /var/www/html/scripts/cron.sh";
-   $varpatternfreq1="/^\d{1,2}\.\d{1}$'/^.{1,3}$/'/";
+   $varpatternfreq1="/^\d{1,3}$/";
    $vargain="/^\d{1,2}\.\d{1}$/";
-   $varpatternfreq="/^\d{1,2}\.\d{1}$/";
+   $varpatternfreq="/^\d{1,3}$/";
    $varpatternhour="/[1-24]/";
    $varpatternminute="/[1-60]/";
    $varpatternsubstation="/[1-4]/";
    $varpatterndayofshow="/^.{1,3}$/";
-if (preg_match($varpatternsudo, $varsudo) && preg_match($varpatterncommand, $varcommand) && preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && preg_match($varpatternhour, $varhour) 
-   && preg_match($varpatternminute, $varminute) && preg_match($varpatternhour, $varhour) && preg_match($varpatterndayofshow, $vardayofshow) && preg_match($varpatternsubstation, $varsubstation)) {
+if ((preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && preg_match($varpatternhour, $varhour) && preg_match($varpatternminute, $varminute) && preg_match($varpatternhour, $varhour) && preg_match($varpatterndayofshow, $vardayofshow) && preg_match($varpatternsubstation, $varsubstation))) {
   echo "Successfully Scheduled Recording"; 
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
