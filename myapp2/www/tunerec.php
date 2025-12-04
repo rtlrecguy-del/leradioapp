@@ -3,7 +3,11 @@ if(isset($_POST['submit'])) {
 $message3=shell_exec('echo "test"');
    echo "<pre>$message3</pre>";
 }
-
+if(array_key_exists('dstop', $_POST)) {
+$uud="sudo /usr/bin/pkill mpv";
+$message3=shell_exec($uud);
+   echo "<pre>$message3</pre>";
+}
 if(array_key_exists('dcron', $_POST)) {
 $varsudo="sudo";
  $varstation=$_POST['station'];
