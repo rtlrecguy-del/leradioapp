@@ -20,6 +20,7 @@ RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/hdrecordfm1.sh*
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/hdradio1.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/sradio.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/srecordfm1.sh*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/recordfm1.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bin/pkill mpv" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill rtl_fm" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill ffmpeg" >> /etc/sudoers
@@ -32,7 +33,6 @@ RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 RUN usermod -aG sudo www-data
 EXPOSE 80
 EXPOSE 12345
-RUN chsh -s /bin/bash www-data
 RUN chmod -R a+x /var/www/html/scripts/
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 WORKDIR /var/www/html/noisemod
