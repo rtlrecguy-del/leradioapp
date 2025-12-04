@@ -36,7 +36,7 @@ else {
  
 
 }
-}if(array_key_exists('dstop', $_POST)) {
+if(array_key_exists('dstop', $_POST)) {
 
 $uud="sudo /usr/bin/pkill ffmpeg";
 $message3=shell_exec($uud);
