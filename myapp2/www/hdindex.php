@@ -48,7 +48,7 @@ if (preg_match($varpatternsudo, $varsudo) && preg_match($varpatterncommand, $var
 else { 
    echo "Your input didn't validate";
 }
-
+}
 
 ?>
 <html>
