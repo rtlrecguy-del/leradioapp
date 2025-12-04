@@ -81,27 +81,3 @@ fillSelect("../txtfiles/m.txt","minute");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<input type="submit" name="dcron" class="button" value="Record Radio"/>
-</font>
-</form>
-</html>
-
-
-
-
-
-
-
