@@ -1,5 +1,4 @@
 #!/bin/bash
-cd /var/www/html/recordings
 current_time=$(date "+%d-%H.%M") > /dev/null 2>&1
 if [ $1 = "1" ]; then
 String98="timeout 1h mpv --quiet --vo=null -ao=null --stream-record=/var/www/html/recordings/tunein$current_time.mp3 http://opml.radiotime.com/Tune.ashx?id=s20431&formats=aac,mp3 > /dev/null 2>&1 &"
