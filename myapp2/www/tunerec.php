@@ -15,16 +15,12 @@ $command="/bin/bash /var/www/html/scripts/tuneincron.sh";
 $varspace=" ";
 $varsudo="sudo";
 $f=$varsudo.$varspace.$command.$varspace.$varstation.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$vartinid.$varspace.$varminute;
- $varpatternsudo="sudo";
    $varpatterntinid="/^([+-]?(?=\d|\.\d)\d*(\.\d*)?|.{0,13})$/";
-   $varpatterncommand="/bin/bash /var/www/html/scripts/cron.sh";
    $varpatternstation="/[1-4]/";
-   $varpatternfreq="/^\d{1,2}\.\d{1}$/";
    $varpatternhour="/[1-24]/";
    $varpatternminute="/[1-60]/";
    $varpatterndayofshow="/^.{1,3}$/";
-if (preg_match($varpatternsudo, $varsudo) && preg_match($varpatterncommand, $varcommand) && preg_match($varpatternstation,$varstation) && preg_match($varpatternhour, $varhour) 
-   && preg_match($varpatternminute, $varminute) && preg_match($varpatternhour, $varhour) && preg_match($varpatterndayofshow, $vardayofshow) && preg_match($varpatterntinid, $vartinid)) {
+if ((preg_match($varpatternstation,$varstation) && preg_match($varpatternminute, $varminute) && preg_match($varpatternhour, $varhour) && preg_match($varpatterndayofshow, $vardayofshow) && preg_match($varpatterntinid, $vartinid))) {
   echo "Successfully Scheduled Recording"; 
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
