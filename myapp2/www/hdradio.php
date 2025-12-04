@@ -21,16 +21,15 @@ $varcommandarams=$varfreq1.$varperiod.$varfreq;
 
 $varsubstation=$_POST['substation'];
 
-$varsudo="sudo";
+
 $varcommand="/bin/bash /var/www/html/scripts/hdradio.sh";
 $varspace=" ;
 $f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varsubstation.$varspace.$ip;
    $varpatternfreq1="/^\d{1,3}/";
-   $varpatterngain="/^\d{1,3}$/";
    $varpatternfreq="/^\d{1,3}$/";
    $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
     $varpatternsubstation="/[1-4]/";
-if ((preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && preg_match($varpatterngain, $vargain) && preg_match($varpatternsubstation, $varsubstation) && preg_match($varpatternip, $ip))) {
+if ((preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && preg_match($varpatternsubstation, $varsubstation) && preg_match($varpatternip, $ip))) {
   echo "Successfully Started Open VLC on client at address udp://@0.0.0.0:12345";
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
@@ -89,9 +88,6 @@ fillSelect("../txtfiles/sub.txt","substation")
 <select style="width:20%;" name="substation" id="substation">
 </select>
 </div>
-<label for="gain" for="station">Choose the antenna gain:</label>
-<select name="gain" id="gain">
-</select>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
 <input type="submit" name="dstop" value="Stop Radio"/>
