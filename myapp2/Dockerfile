@@ -13,12 +13,9 @@ COPY ./envars /etc/apache2/envars
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts*" >> /etc/sudoers
-RUN echo "www-data ALL=NOPASSWD: /bin/bash pkill -9 rtlfm" >> /etc/sudoers
-RUN echo "www-data ALL=NOPASSWD: /bin/bash pkill -9 ffmpeg*" >> /etc/sudoers
-RUN echo "www-data ALL=NOPASSWD: /bin/bash pkill -9 nrsc5" >> /etc/sudoers
-RUN echo "www-data ALL=NOPASSWD: /bin/bash /usr/bin/pkill -9 rtlfm" >> /etc/sudoers
-RUN echo "www-data ALL=NOPASSWD: /bin/bash /usr/bin/pkill -9 ffmpeg*" >> /etc/sudoers
-RUN echo "www-data ALL=NOPASSWD: /bin/bash /usr/bin/pkill -9 nrsc5" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill rtl_fm" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill ffmpeg*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill nrsc5" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD sudo ps aux | grep ffmpeg | grep -v grep" >> /etc/sudoers
 RUN rm /etc/localtime
 RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
