@@ -1,6 +1,3 @@
-
-Many Improvements have been made since the video was created.
-
 Streams live local radio from RTLSDR Dongle to local devices.  Works with both FM HD FM SD radio and schedules recordings for later listening.
 
 It utilizes CRON formatting to schedule recordings such as:
