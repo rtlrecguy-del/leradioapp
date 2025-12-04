@@ -1,4 +1,4 @@
-<?php
+ nu<?php
 if(isset($_POST['submit'])) {
 $u=$_POST['del'];
 $ee="/bin/bash /home/ted/cronp.sh ";
@@ -12,8 +12,10 @@ $message3=shell_exec('crontab -l');
 }
 if(array_key_exists('dcronbtn', $_POST)) {
 $u=$_POST['del'];
-$ee="/bin/bash /var/www/html/scripts/cronp.sh ";
-$ii=$ee.$u;
+$varspace=" ";
+$ee="/bin/bash /var/www/html/scripts/cronp.sh";
+$ii=$ee.$varspace.$u;
+
 $message1=shell_exec($ii);
    echo "<pre>$message1</pre>";
 }
@@ -37,7 +39,7 @@ $message1=shell_exec($ii);
 </select>
 <form action="" method="post">
 
-<label for="del">del line:</label>
+<label for="del">del line number:</label>
   <input  type="text" id="del" name="del">
 <input type="submit" name="lcron"
                 class="button" value="lcron" />
