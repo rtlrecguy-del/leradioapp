@@ -16,7 +16,7 @@ A good place to find local stations to you is to look up your FM stations on Wik
 
 https://hdradio.com
 
-The recordings are not accessible from the app.   The shared directory on Host should be setup to share over the networt to a media player like VLC.
+The recordings are not accessible from the app.   The shared directory on Host should be setup to share over the network to a media player like VLC.
 All recordings are setup as repeating.  Remove from CRON in app if you want to cancel a scheduled recording.
  
 Program filters out static using noise models for reception problems such as hiss.
