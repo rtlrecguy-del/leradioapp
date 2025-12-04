@@ -43,13 +43,13 @@ else {
 }
 }if(array_key_exists('dstop', $_POST)) {
 
-$uud="sudo /bin/bash /usr/bin/pkill -9 ffmpeg";
+$uud="sudo /usr/bin/pkill ffmpeg";
 $message3=shell_exec($uud);
    echo "<pre>$message3</pre>";
-$uut="sudo /bin/bash /usr/bin/pkill -9 rtl_fm";
+$uut="sudo /usr/bin/pkill rtl_fm";
 $message3=shell_exec($uut);
    echo "<pre>$message3</pre>";
-$uup="/bin/bash /usr/bin/pkill -9 nrsc";
+$uup="/usr/bin/pkill nrsc";
 $message3=shell_exec($uup);
    echo "<pre>$message3</pre>";
 }
