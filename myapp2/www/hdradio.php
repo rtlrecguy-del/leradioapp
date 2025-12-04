@@ -18,7 +18,7 @@ $varsubstation=$_POST['substation'];
 
 
 $varcommand="/bin/bash /var/www/html/scripts/hdradio.sh";
-$varspace=" ;
+$varspace=" ";
 $f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varsubstation.$varspace.$ip;
    $varpatternfreq1="/^\d{1,3}/";
    $varpatternfreq="/^\d{1,3}$/";
