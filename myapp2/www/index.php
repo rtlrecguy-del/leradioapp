@@ -30,10 +30,10 @@ $f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varhour.
    $varpatternsudo="sudo";
    $varpatterncommand="/bin/bash /var/www/html/scripts/cron.sh";
    $varpatternfreq1="/^\d{1,2}\.\d{1}$'/^.{1,3}$/'/";
-   $vargain="/^\d{1,2}\.\d{1}
+   $vargain="/^\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,2}\.\d{1}$/";
    $varpatternhour="/[1-24]/";
-   $varpatternminute="/[1-60]/;day
+   $varpatternminute="/[1-60]/;
    $varpatterndayofshow="'/^.{1,3}$/'";
 if (preg_match($varpatternsudo, $varsudo) && preg_match($varpatterncommand, $varcommand) && if preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) if preg_match($varpatternhour, $varhour) 
    && preg_match($varpatternminute, $varminute) && preg_match($varpatternhour, $varhour) && preg_match($varpatterndayofshow, $vardayofshow)) {
