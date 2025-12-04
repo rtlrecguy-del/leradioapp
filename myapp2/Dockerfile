@@ -12,7 +12,15 @@ COPY ./apache2.conf /etc/apache2/apache2.conf
 COPY ./envars /etc/apache2/envars
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/cron.sh*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/hdcron.sh*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/hdradio.sh*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/hdrecordfm1.sh*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/hdradio1.sh*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/sradio.sh*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/srecordfm1.sh*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/tuneincron.sh*" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/tuneincradio.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill rtl_fm" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill ffmpeg*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill nrsc5" >> /etc/sudoers
