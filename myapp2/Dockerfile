@@ -33,11 +33,11 @@ RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 RUN usermod -aG sudo www-data
 EXPOSE 80
 EXPOSE 12345
-RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R a+x /var/www/html/scripts/
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 WORKDIR /var/www/html/noisemod
 RUN git clone https://github.com/GregorR/rnnoise-models.git
+RUN chown -R www-data:www-data /var/www/html
 WORKDIR /
 ENTRYPOINT ["/entrypoint.sh"]
  
