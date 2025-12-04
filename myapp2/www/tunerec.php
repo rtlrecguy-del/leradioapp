@@ -30,7 +30,7 @@ if (preg_match($varpatternsudo, $varsudo) && preg_match($varpatterncommand, $var
 }
 else {
    echo "Input not Validated";
-}
+}}
 ?>
 <html>
 <head>
