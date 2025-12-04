@@ -1,4 +1,4 @@
-\<?php
+<?php
 if(isset($_POST['submit'])) {
 $message3=shell_exec('echo "test"');
    echo "<pre>$message3</pre>";
