@@ -44,9 +44,9 @@ $message1=shell_exec($f);
 <label for="del">del line number:</label>
   <input  type="text" id="del" name="del">
 <input type="submit" name="lcron"
-                class="button" value="lcron" />
+                class="button" value="List Cron Jobs" />
 <input type="submit" name="dcronbtn"
-                class="button" value="dcronbtn" />
+                class="button" value="Delete Cron Job" />
 
 </form>
 
