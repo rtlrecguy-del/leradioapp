@@ -29,8 +29,6 @@ RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN chmod g+s /var/www/html/recordings
 RUN a2enmod rewrite
 RUN dpkg-reconfigure tzdata
-RUN curl -sS https://getcomposer.org/installer | php
-RUN php composer.phar create-project cronkeep/cronkeep --keep-vcs -s dev /var/www/html/cronkeep
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 RUN usermod -aG sudo www-data
 EXPOSE 80
