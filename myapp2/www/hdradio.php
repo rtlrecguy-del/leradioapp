@@ -16,7 +16,7 @@ $ip=$_SERVER['REMOTE_ADDR'];
  $varfreq=$_POST['freq'];
 $varperiod=".";
 $varcommandarams=$varfreq1.$varperiod.$varfreq;
-
+$varsudo="sudo";
 
 
 $varsubstation=$_POST['substation'];
