@@ -1,4 +1,4 @@
-<?php
+\<?php
 if(isset($_POST['submit'])) {
 $message3=shell_exec('echo "test"');
    echo "<pre>$message3</pre>";
@@ -40,7 +40,7 @@ $f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varhour.
    $varpatternminute="/[1-60]/";
    $varpatternsubstation="/[1-4]/";
    $varpatterndayofshow="/^.{1,3}$/";
-if (preg_match($varpatternsudo, $varsudo) && preg_match($varpatterncommand, $varcommand) && preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && if preg_match($varpatternhour, $varhour) 
+if (preg_match($varpatternsudo, $varsudo) && preg_match($varpatterncommand, $varcommand) && preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && preg_match($varpatternhour, $varhour) 
    && preg_match($varpatternminute, $varminute) && preg_match($varpatternhour, $varhour) && preg_match($varpatterndayofshow, $vardayofshow) && preg_match($varpatternsubstation, $varsubstation)) {
   echo "Successfully Scheduled Recording"; 
    $message3=shell_exec($f);
