@@ -74,7 +74,6 @@ fillSelect("../txtfiles/cday.txt","dayofshow");
     <option value="../cron.php">Manage Recordings</option>
     <option value="../sradio.php">Stream FM Radio</option>
   <option value="../hdradio.php">Stream HD Radio</option>
- <option value="../tunerec.php">Record Tune In Radio</option>
 </select>
 
 </br>
