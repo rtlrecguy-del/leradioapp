@@ -83,7 +83,7 @@ docker run -d -p 8080:80 -p 12345:12345/udp --device /dev/bus/usb/001/022:/dev/b
 where /001/022 is the specific usb where the dongle is located.
 
 
-The dongle I used for this program is:
+The dongle I used as the tuner is listed below:
 
 [NoElec Dongle](https://www.nooelec.com/store/?srsltid=AfmBOopSf4UXkTtCjnEATcpNCeB3GxvSgWppPW0E9qMfOFou75puBHyx)
 
