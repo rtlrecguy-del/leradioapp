@@ -31,13 +31,13 @@ $varspace=" ";
    $varpatternsubstation="/[1-4]/";
    $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
 $f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varsubstation.$varspace.$ip;
-   if (preg_match($pattern1, $varsudo) && preg_match($pattern2, $varcommand) && preg_match($pattern1, $varfreq1) && preg_match($pattern2, $varfreq)) && preg_match($varpatternip, $ip) && preg_match($varpatternsubstation, $varsubstation)) {
+   if (preg_match($pattern1, $varsudo) && preg_match($pattern2, $varcommand) && preg_match($pattern1, $varfreq1) && preg_match($pattern2, $varfreq) && preg_match($varpatternip, $ip) && preg_match($varpatternsubstation, $varsubstation)) {
   echo "Successfully Started.  Open VLC from client to address udp://@0.0.0.0:12345";
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
 }
 else {
-   echo "Data not validated":
+   echo "Data not validated";
       }}
 }if(array_key_exists('dstop', $_POST)) {
 
