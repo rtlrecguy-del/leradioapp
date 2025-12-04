@@ -38,6 +38,7 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 WORKDIR /var/www/html/noisemod
 RUN git clone https://github.com/GregorR/rnnoise-models.git
 RUN chown -R www-data:www-data /var/www/html
+RUN chmod -R 755 /var/www/html
 WORKDIR /
 ENTRYPOINT ["/entrypoint.sh"]
  
