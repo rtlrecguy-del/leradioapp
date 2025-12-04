@@ -76,6 +76,7 @@ fillSelect("../txtfiles/m.txt","minute");
 <select name="hour" id="hour">
 </select>
 <input type="submit" name="dcron" class="button" value="Record Radio"/>
+<input type="submit" name="dstop" value="Stop Recording"/>
 </form>
 </html>
 
