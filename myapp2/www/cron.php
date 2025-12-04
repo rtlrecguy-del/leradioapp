@@ -1,4 +1,4 @@
- nu<?php
+<?php
 if(isset($_POST['submit'])) {
 $u=$_POST['del'];
 $ee="/bin/bash /home/ted/cronp.sh ";
