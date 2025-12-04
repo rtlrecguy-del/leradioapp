@@ -7,7 +7,7 @@ $message=shell_exec('echo "test"');
       echo "<pre>$message</pre>";
 }
 if(array_key_exists('lcron', $_POST)) {
-$message3=shell_exec('crontab -l');
+$message3=shell_exec('crontab -l | n1');
    echo "<pre>$message3</pre>";
 }
 if(array_key_exists('dcronbtn', $_POST)) {
