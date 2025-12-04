@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['submit'])) {
-$message=shell_exec('echo "test"');
-      echo "<pre>$message</pre>";
+$message3=shell_exec('echo "test"');
+   echo "<pre>$message3</pre>";
 }
 if(array_key_exists('lcron', $_POST)) {
 $message3=shell_exec('crontab -l | n1');
