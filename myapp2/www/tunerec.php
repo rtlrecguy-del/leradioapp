@@ -8,15 +8,28 @@ if(array_key_exists('dcron', $_POST)) {
  $varstation=$_POST['station'];
 $varhour=$_POST['hour'];
 $vardayofshow=$_POST['dayofshow'];
-$tinid1=$_POST['tinid'];
+$vartinid=$_POST['tinid'];
 $varminute=$_POST['minute'];
 $command="/bin/bash /var/www/html/scripts/tuneincron.sh";
 $varspace=" ";
 $varsudo="sudo";
-$f=$varsudo.$varspace.$command.$varspace.$varstation.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$tinid1.$varspace.$varminute;
-echo "$f";
-$message3=shell_exec($f);
+$f=$varsudo.$varspace.$command.$varspace.$varstation.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$vartinid.$varspace.$varminute;
+ $varpatternsudo="sudo";
+   $varpatterntinid="'/^([+-]?(?=\d|\.\d)\d*(\.\d*)?|.{0,13})$/'";
+   $varpatterncommand="/bin/bash /var/www/html/scripts/cron.sh";
+   $varpatternstation="/[1-4]/";
+   $varpatternfreq="/^\d{1,2}\.\d{1}$/";
+   $varpatternhour="/[1-24]/";
+   $varpatternminute="/[1-60]/;
+   $varpatterndayofshow="'/^.{1,3}$/'";
+if (preg_match($varpatternsudo, $varsudo) && preg_match($varpatterncommand, $varcommand) && if preg_match($varpatternstation,$varstation) && if preg_match($varpatternhour, $varhour) 
+   && preg_match($varpatternminute, $varminute) && preg_match($varpatternhour, $varhour) && preg_match($varpatterndayofshow, $vardayofshow) && preg_match($varpatterntinid, $vartinid)) {
+  echo "Successfully Scheduled Recording"; 
+   $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
+}
+else {
+   echo "Input not Validated";
 }
 ?>
 <html>
