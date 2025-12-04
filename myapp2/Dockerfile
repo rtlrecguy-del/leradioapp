@@ -12,6 +12,7 @@ COPY ./apache2.conf /etc/apache2/apache2.conf
 COPY ./envars /etc/apache2/envars
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/cronp.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/cron.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/hdcron.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/hdradio.sh*" >> /etc/sudoers
