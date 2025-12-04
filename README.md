@@ -1,4 +1,3 @@
-View Android APP in action at: <a href="https://youtu.be/9CAmN4XSIiY">https://youtu.be/9CAmN4XSIiY</a>
 
 Many Improvements have been made since the video was created.
 
