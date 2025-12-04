@@ -19,6 +19,7 @@ RUN echo "www-data ALL=NOPASSWD: /bin/bash pkill -9 nrsc5" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /usr/bin/pkill -9 rtlfm" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /usr/bin/pkill -9 ffmpeg*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /usr/bin/pkill -9 nrsc5" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD sudo ps aux | grep ffmpeg | grep -v grep" >> /etc/sudoers
 RUN rm /etc/localtime
 RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN chmod g+s /var/www/html/recordings
