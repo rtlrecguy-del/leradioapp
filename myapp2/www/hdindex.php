@@ -58,7 +58,7 @@ else {
 <option value="">Choose Page To Go To:</option>
     <option value="../index.php">Record SD FM</option>
     <option value="../hdindex.php">Record HD Radio</option>
-    <option value="../cronkeep/src">Manage Recordings</option>
+    <option value="../cron.php">Manage Recordings</option>
     <option value="../sradio.php">Stream FM Radio</option>
   <option value="../hdradio.php">Stream HD Radio</option>
  <option value="../tunerec.php">Record Tune In Radio</option>
