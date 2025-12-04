@@ -22,7 +22,7 @@ $f=$varsudo.$varspace.$command.$varspace.$varstation.$varspace.$varhour.$varspac
    $varpatternhour="/[1-24]/";
    $varpatternminute="/[1-60]/;
    $varpatterndayofshow="'/^.{1,3}$/'";
-if (preg_match($varpatternsudo, $varsudo) && preg_match($varpatterncommand, $varcommand) && if preg_match($varpatternstation,$varstation) && if preg_match($varpatternhour, $varhour) 
+if (preg_match($varpatternsudo, $varsudo) && preg_match($varpatterncommand, $varcommand) && preg_match($varpatternstation,$varstation) && preg_match($varpatternhour, $varhour) 
    && preg_match($varpatternminute, $varminute) && preg_match($varpatternhour, $varhour) && preg_match($varpatterndayofshow, $vardayofshow) && preg_match($varpatterntinid, $vartinid)) {
   echo "Successfully Scheduled Recording"; 
    $message3=shell_exec($f);
