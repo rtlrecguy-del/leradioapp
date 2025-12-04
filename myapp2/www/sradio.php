@@ -18,12 +18,17 @@ $varcommand="/bin/bash /var/www/html/scripts/sradio.sh";
 $varspace=" ";
 $vardot=".";
 $f=$varsudo.$varspace.$varcommand.$varspace.$varfreq1.$vardot.$varfreq.$varspace.$ip;
-echo "$f";
-$message3=shell_exec($f);
+   $varpatternsudo="sudo";
+   $varpatterncommand="/bin/bash";
+   $varpatternfreq1="/^\d{1,2}\.\d{1}$/";
+   $varpatternfreq="/^\d{1,2}\.\d{1}$/";
+   $varpatternip="'/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/';";
+if (preg_match($pattern1, $varsudo) && preg_match($pattern2, $varcommand) && if preg_match($pattern1, $varfreq1) && preg_match($pattern2, $varfreq)) if preg_match($varpatternip, $ip)) {
+  echo "Successfully Started.  Open VLC from client to address udp://@0.0.0.0:12345";
+   $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
-echo "Successfully Started Click on Open Radio Vlc";
 }
-
+}
 if(array_key_exists('dstop', $_POST)) {
 
 $uud="sudo /bin/bash /usr/bin/pkill -9 ffmpeg";
