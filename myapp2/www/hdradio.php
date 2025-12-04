@@ -23,22 +23,25 @@ $varsubstation=$_POST['substation'];
 
 $varsudo="sudo";
 $varcommand="/bin/bash /var/www/html/scripts/hdradio.sh";
-$varspace=" ";
-   $varpatternsudo="sudo";
-   $varpatterncommand="/bin/bash /var/www/html/scripts/hdradio.sh";
-   $varpatternfreq1="/^\d{1,2}\.\d{1}$/";
-   $varpatternfreq="/^\d{1,2}\.\d{1}$/";
-   $varpatternsubstation="/[1-4]/";
-   $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
+$varspace=" ;
 $f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varsubstation.$varspace.$ip;
-   if (preg_match($pattern1, $varsudo) && preg_match($pattern2, $varcommand) && preg_match($pattern1, $varfreq1) && preg_match($pattern2, $varfreq) && preg_match($varpatternip, $ip) && preg_match($varpatternsubstation, $varsubstation)) {
-  echo "Successfully Started.  Open VLC from client to address udp://@0.0.0.0:12345";
+   $varpatternfreq1="/^\d{1,3}/";
+   $varpatterngain="/^\d{1,3}$/";
+   $varpatternfreq="/^\d{1,3}$/";
+   $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
+    $varpatternsubstation="/[1-4]/";
+if ((preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && preg_match($varpatterngain, $vargain) && preg_match($varpatternsubstation, $varsubstation) && preg_match($varpatternip, $ip))) {
+  echo "Successfully Started Open VLC on client at address udp://@0.0.0.0:12345";
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
 }
 else {
-   echo "Data not validated";
-      }}
+   echo "Input did not validate";
+}
+  
+ 
+
+}
 }if(array_key_exists('dstop', $_POST)) {
 
 $uud="sudo /bin/bash /usr/bin/pkill -9 ffmpeg";
