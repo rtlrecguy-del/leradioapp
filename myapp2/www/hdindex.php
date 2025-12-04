@@ -5,12 +5,6 @@ $message3=shell_exec('echo "test"');
 }
 
 if(array_key_exists('dcron', $_POST)) {
-$command = "sudo ps aux | grep ffmpeg | grep -v grep";
-$output = shell_exec($command);
-
-if (!empty($output)) {
-    echo "The program '" . $programName . "' is running already.\n";
-} 
 
 $varfreq=$_POST['freq1'];
 
