@@ -12,7 +12,7 @@ $message3=shell_exec('crontab -l');
 }
 if(array_key_exists('dcronbtn', $_POST)) {
 $u=$_POST['del'];
-$ee="/bin/bash /home/ted/cronp.sh ";
+$ee="/bin/bash /var/www/html/scripts/cronp.sh ";
 $ii=$ee.$u;
 $message1=shell_exec($ii);
    echo "<pre>$message1</pre>";
