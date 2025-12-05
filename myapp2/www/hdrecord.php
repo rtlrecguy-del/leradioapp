@@ -70,7 +70,7 @@ $f=$command.$varspace.$vartunerselect_sanitized;
 $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
 }
-
+}
 ?>
 <html>
 <head>
