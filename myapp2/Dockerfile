@@ -11,7 +11,6 @@ RUN echo "www-data" > /etc/at.allow
 COPY ./apache2.conf /etc/apache2/apache2.conf
 COPY ./envars /etc/apache2/envars
 COPY ./entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/delcron.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/fmcron.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/fmradio.sh*" >> /etc/sudoers
@@ -25,7 +24,6 @@ RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill ffmpeg" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill nrsc5" >> /etc/sudoers
 RUN rm /etc/localtime
 RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
-RUN a2enmod rewrite
 RUN dpkg-reconfigure tzdata
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 RUN usermod -aG sudo www-data
@@ -37,11 +35,10 @@ WORKDIR /var/www/html/noisemod
 RUN git clone https://github.com/GregorR/rnnoise-models.git
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html
-run chmod 777 /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 RUN chmod u+s /usr/sbin/cron
-RUN touch /var/log/cron.log
 RUN usermod -s /bin/bash www-data
-RUN chown -R www-data:www-data /var/log/apache2
+RUN chown -R www-data:www-data /var/log/apache2/
 USER www-data
 ENTRYPOINT ["/entrypoint.sh"]
  
