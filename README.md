@@ -1,4 +1,14 @@
-Client device(android, browser) Interact with docker container to record on schedule or play a live stream of local FM and local HD FM channels to devices on a local network.   No Internet needed just intranet.
+Streams live local radio from RTLSDR Dongle to local devices.  Works with both FM HD FM SD radio and schedules recordings for later listening.
+
+It utilizes CRON formatting to schedule recordings such as:
+
+* Hour=starting hour
+* minute=starting minute
+* Day(1=monday,2=tuesday,3=wedneday,4=thursday,5=friday,6=saturday,7=sunday,1-7=Record daily)
+
+Example Video:
+
+https://www.youtube.com/playlist?list=PL7Sqq_-LtHrpUMhH990X8fflRT2970h6X
 
 Since no internet is needed for this Docker Container for security the Docker Host can be blocked from the Internet at a router and Only Accessible by Local Area Network. 
 
@@ -9,22 +19,6 @@ The more secure system is not on internet to begin with IMO
 There is no Guide data that is available that I know of worth anything for FM HD Radio in USA so updates are not needed. 
 
 It is even possible to run the Docker Container and Client on same Host such as a Raspberry PI and Not even have an Intranet or Lan Connection and Attach to a TV for example which  would be even more secure.  This would require that your best antenna reception was near your Television/Monitor.
-
-Project is located at:
-https://github.com/rtlrecguy-del/leradioapp
-
-
-Example Video:
-
-https://www.youtube.com/playlist?list=PL7Sqq_-LtHrpUMhH990X8fflRT2970h6X
-
-Streams live local radio from RTLSDR Dongle to local devices.  Works with both FM HD FM SD radio and schedules recordings for later listening.
-
-It utilizes CRON formatting to schedule recordings such as:
-
-* Hour=starting hour
-* minute=starting minute
-* Day(1=monday,2=tuesday,3=wedneday,4=thursday,5=friday,6=saturday,7=sunday,1-7=Record daily)
 
 One issue that may happen on install is the dongle is not being recognized.
 To correct use the lsusb command to make sure that the dongle is being recognized on the Host as well as the Docker Container.
