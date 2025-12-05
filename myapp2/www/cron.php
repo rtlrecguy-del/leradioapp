@@ -8,12 +8,15 @@ $message3=shell_exec('crontab -l | cat -n');
    echo "<pre>$message3</pre>";
 }
 if(array_key_exists('dcronbtn', $_POST)) {
-$vardel=$_POST['del'];
+    $vardel=$_POST['del'];
+    $vardel_sanitized=htmlspecialchars($vardel, ENT_QUOTES, 'UTF-8');
+
+
 $varspace=" ";
 $varcommand="/bin/bash /var/www/html/scripts/delcron.sh";
-$f=$varcommand.$varspace.$vardel;
+$f=$varcommand.$varspace.$vardel_sanitized;
 $vardelpattern="/^(?:[1-9]|[1-5]\d|24)$/";
-if (preg_match($vardelpattern, $vardel)) {
+if (preg_match($vardelpattern,  $vardel_sanitized)) {
 $message1=shell_exec($f);
    echo "<pre>$message1</pre>";
  echo "Successfully deleted";
