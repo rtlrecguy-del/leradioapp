@@ -10,8 +10,8 @@ $varfreq1_sanitized=filter_var($_POST['freq1'], FILTER_SANITIZE_NUMBER_INT);
 $varfreq_sanitized=filter_var($_POST['freq'], FILTER_SANITIZE_NUMBER_INT);
    
 $varperiod=".";
-$varcommandparams=$varfreq.$varperiod.$varfreq1;
-$varcommandparams_sanitized=htmlspecialchars($varcommandparams, ENT_QUOTES, 'UTF-8');
+
+
 
 
 
@@ -39,7 +39,7 @@ $varminute_sanitized=htmlspecialchars($varminute, ENT_QUOTES, 'UTF-8');
 
 $varcommand="/bin/bash /var/www/html/scripts/hdcron.sh";
 $varspace=" ";
-$f=$varcommand.$varspace.$varcommandparams_sanitized.$varspace.$varhour_sanitized.$varspace.$vardayofshow_sanitized.$varspace.$varsubstation_sanitized.$varspace.$varminute_sanitized;
+$f=$varcommand.$varspace.$varfreq1_sanitized.$varspace.$varfreq_sanitized.$varspace.$varhour_sanitized.$varspace.$vardayofshow_sanitized.$varspace.$varsubstation_sanitized.$varspace.$varminute_sanitized;
    $varpatternfreq1="/^\d{1,3}$/";
    $vargain="/^\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}$/";
@@ -47,7 +47,7 @@ $f=$varcommand.$varspace.$varcommandparams_sanitized.$varspace.$varhour_sanitize
    $varpatternminute="/^(?:[1-9]|[1-5]\d|60)$/";
    $varpatternsubstation="/[1-4]/";
    $varpatterndayofshow="/^.{1,3}$/";
-if ((preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && preg_match($varpatternhour, $varhour) && preg_match($varpatternminute, $varminute) && preg_match($varpatternhour, $varhour) && preg_match($varpatterndayofshow, $vardayofshow) && preg_match($varpatternsubstation, $varsubstation))) {
+if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatternminute, $varminute_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatterndayofshow, $vardayofshow_sanitized) && preg_match($varpatternsubstation, $varsubstation)_sanitized)) {
   echo "Successfully Scheduled Recording"; 
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
