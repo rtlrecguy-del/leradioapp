@@ -1,3 +1,11 @@
+No Internet is needed for this Container.   Just intranet.  
+
+I suggest for security that in your router you block the Single Board Computer(for example) Docker Server from the internet. 
+
+It doesn't require updates for a guide because guide data isn't relatively available for FM Radio.
+
+Perfect for people with Data Plans or limited internet.
+
 
 Example Video:
 
