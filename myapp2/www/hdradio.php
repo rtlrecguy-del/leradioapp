@@ -47,7 +47,7 @@ else {
 }
 if(array_key_exists('stopplay', $_POST)) {
  echo "Sending Message to Stop Service";
-$command="sudo /bin/bash /var/www/html/scripts/sigint.sh';
+$command="sudo /bin/bash /var/www/html/scripts/sigint.sh";
 $varspace=" ";
  $varpatterntunerselect="/^\d{1,6}$/";
 if ((preg_match($varpatterntunerselect, $vartunerselect_sanitized){
