@@ -1,4 +1,4 @@
-Since no intranet is needed for this Docker Container for security the Docker Host can be blocked from the Internet 
+Since no internet is needed for this Docker Container for security the Docker Host can be blocked from the Internet 
 
 at a router and Only Accessible by Local Area Network.  Since very low powered Single board computers can run this Docker container when
 
