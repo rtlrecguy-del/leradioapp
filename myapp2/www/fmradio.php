@@ -15,13 +15,12 @@ $varip_sanitized=htmlspecialchars($varip, ENT_QUOTES, 'UTF-8');
 
 
 
-$varsudo="sudo";
 
 
-$varcommand="/bin/bash /var/www/html/scripts/fmradio.sh";
+$varcommand="sudo /bin/bash /var/www/html/scripts/fmradio.sh";
 $varspace=" ";
 $vardot=".";
-$f=$varsudo.$varspace.$varcommand.$varspace.$varfreq1_sanitized.$vardot.$varfreq_sanitized.$varspace.$varip_sanitized;
+$f=$varcommand.$varspace.$varfreq1_sanitized.$vardot.$varfreq_sanitized.$varspace.$varip_sanitized;
    $varpatternfreq1="/^\d{1,3}$/";
    $varpatterngain="/\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}\$/";
