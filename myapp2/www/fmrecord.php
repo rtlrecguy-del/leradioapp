@@ -7,27 +7,34 @@ $message3=shell_exec('echo "test"');
 if(array_key_exists('dcron', $_POST)) {
 
 $varfreq1=$_POST['freq'];
-$varfreq=$_POST['freq1'];
+$varfreq_sanitized=htmlspecialchars($varfreq, ENT_QUOTES, 'UTF-8');
+
+   $varfreq=$_POST['freq1'];
+$varfreq_sanitized=htmlspecialchars($varfreq, ENT_QUOTES, 'UTF-8');
+   
 $varcommanderiod=".";
 $varcommandarams=$varfreq.$varcommanderiod.$varfreq1;
+$varcommandparams_sanitized=htmlspecialchars($varcommandparams, ENT_QUOTES, 'UTF-8');
 
 
 
 $vargain=$_POST['gain'];
+$vargain_sanitized=htmlspecialchars($vargain, ENT_QUOTES, 'UTF-8');
 
 
-
-
- $varfreq=$_POST['freq'];
 $varhour=$_POST['hour'];
+$varhour_sanitized=htmlspecialchars($varhour, ENT_QUOTES, 'UTF-8');
+   
 $vardayofshow=$_POST['dayofshow'];
-$vargain=$_POST['gain'];
+$vardayofshow_sanitized=htmlspecialchars($vardayofshow, ENT_QUOTES, 'UTF-8');
+   
 $varminute=$_POST['minute'];
+$varminute_sanitized=htmlspecialchars($varminute, ENT_QUOTES, 'UTF-8');
 
 
 $varcommand="/bin/bash /var/www/html/scripts/fmcron.sh";
 $varspace=" ";
-$f=$varcommand.$varspace.$varcommandarams.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$vargain.$varspace.$varminute;
+$f=$varcommand.$varspace.$varcommandarams_sanitized.$varspace.$varhour_sanitized.$varspace.$vardayofshow_sanitized.$varspace.$vargain_sanitized.$varspace.$varminute_sanitized;
    $varpatternfreq1="/^\d{1,3}$/";
    $vargain="/^\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}$/";
