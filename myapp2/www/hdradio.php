@@ -49,18 +49,12 @@ else {
  
 
 }
-if(array_key_exists('dstop', $_POST)) {
-
-$uud="sudo /usr/bin/pkill ffmpeg";
-$message3=shell_exec($uud);
-   echo "<pre>$message3</pre>";
-$uut="sudo /usr/bin/pkill rtl_fm";
-$message3=shell_exec($uut);
-   echo "<pre>$message3</pre>";
-$uup="sudo /usr/bin/pkill nrsc5";
-$message3=shell_exec($uup);
+if(array_key_exists('stopplay', $_POST)) {
+ echo "Sending Message to Stop Service";
+$message3=shell_exec('/bin/bash /var/www/html/scripts/signint.sh');
    echo "<pre>$message3</pre>";
 }
+
 
 ?>
 <html>
@@ -99,7 +93,7 @@ fillSelect("../txtfiles/sub.txt","substation")
 </div>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
-<input type="submit" name="dstop" value="Stop Radio"/>
+<input type="submit" name="stopplay" value="Stop Radio"/>
 </form>
 </body>
 
