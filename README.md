@@ -1,6 +1,6 @@
 No Internet is needed for this Container.   Just intranet.  
 
-I suggest for security that in your router you block the Single Board Computer(for example) Docker Server from the internet. 
+I suggest for security that in your router you block the Single Board Computer(for example) Docker Server from the internet as an extra security precaution. 
 
 It doesn't require updates for a guide because guide data isn't relatively available for FM Radio.
 
