@@ -4,8 +4,9 @@ $message3=shell_exec('echo "test"');
    echo "<pre>$message3</pre>";
 }
 if(array_key_exists('lcron', $_POST)) {
-$message3=shell_exec('crontab -l | cat -n');
-   echo "<pre>$message3</pre>";
+$command_output=shell_exec('crontab -l | cat -n');
+$sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+echo $sanitized_output;
 }
 if(array_key_exists('dcronbtn', $_POST)) {
     $vardel=$_POST['del'];
