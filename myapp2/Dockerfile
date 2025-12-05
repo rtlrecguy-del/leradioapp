@@ -8,8 +8,6 @@ RUN echo -e "\nblacklist dvb_usb_rtl28xxu\nblacklist rtl2832\nblacklist rtl2830"
 COPY ./www /var/www/html
 RUN htpasswd -cb /etc/apache2/.htpasswd myavr2 myavr2radio
 RUN git clone https://github.com/theori-io/nrsc5.git && cd nrsc5 && mkdir build && cd build && cmake .. && make && make install && ldconfig
-COPY ./apache2.conf /etc/apache2/apache2.conf
-COPY ./envars /etc/apache2/envars
 COPY ./entrypoint.sh /entrypoint.sh
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/delcron.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/fmcron.sh*" >> /etc/sudoers
