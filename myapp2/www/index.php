@@ -24,7 +24,7 @@ fillSelect("../txtfiles/cday.txt","dayofshow");
     <option value="../fmradio.php">Stream FM Radio</option>
   <option value="../hdradio.php">Stream HD Radio</option>
 </select>
-<p1> Welcome to The OTA DVR like Device for Radio  If you haven't already pleast sign in</p1>
+<p style="font-size: 40px;">Welcome.   Please enjoy the application. </br>  The drop down menu is how this site is navigated</p>
 
 </body>
 </html>
