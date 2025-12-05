@@ -6,10 +6,10 @@ echo $sanitized_output;
 }
 exec("pgrep ffmpeg", $output, $return);
 if ($return == 0) {
-   echo 'Recording ... <button class="red-button">Click Me</button>';
+   echo 'Recording/streaming ... <button class="red-button">Click Me</button>';
 }
 else {
-   echo 'Not Recording ... <button class="green-button">Click Me</button>';
+   echo 'Not Recording/streaming ... <button class="green-button">Click Me</button>';
 }
 if(array_key_exists('dcron', $_POST)) {
 
