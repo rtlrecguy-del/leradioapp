@@ -65,7 +65,7 @@ $f=$varcommand.$varspace.$varfreq1_sanitized.$varspace.$varfreq_sanitized.$varsp
    $varpatternminute="/^(?:[1-9]|[1-5]\d|60)$/";
    $varpatternsubstation="/[1-4]/";
    $varpatterndayofshow="/^.{1,3}$/";
-if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatternminute, $varminute_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatterndayofshow, $vardayofshow_sanitized) && preg_match($varpatternsubstation, $varsubstation_sanitized)) {
+if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatternminute, $varminute_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatterndayofshow, $vardayofshow_sanitized) && preg_match($varpatternsubstation, $varsubstation_sanitized))) {
   echo "Successfully Scheduled Recording"; 
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
