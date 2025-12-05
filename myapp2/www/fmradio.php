@@ -33,14 +33,27 @@ $f=$varcommand.$varspace.$vvarfreq1_sanitized.$vardot.$varfreq_sanitized.$varspa
    $varpatterngain="/\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}\$/";
    $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
-if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternip, $varip_sanitized))) {
+$descriptorspec = array(
+   0 => array("pipe", "r"),  // stdin
+   1 => array("pipe", "w"),  // stdout
+   2 => array("pipe", "w")   // stderr
+);
+
+$pipes = array();
+   if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternip, $varip_sanitized))) {
   echo "Successfully Started Open VLC on client at address udp://@0.0.0.0:12345";
-   $message3=shell_exec($f);
-   echo "<pre>$message3</pre>";
-}
+$process = proc_open($f, $descriptorspec, $pipes);
+   }
 else {
    echo "Input did not validate";
-}}
+}
+if (is_resource($process)) {
+    stream_set_blocking($pipes[1], 0);
+    stream_set_blocking($pipes[2], 0);
+  
+}
+
+}
 if(array_key_exists('dstop', $_POST)) {
 
 $uud="sudo /usr/bin/pkill ffmpeg";
