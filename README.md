@@ -1,3 +1,4 @@
+
 Example Video:
 
 https://www.youtube.com/playlist?list=PL7Sqq_-LtHrpUMhH990X8fflRT2970h6X
@@ -57,6 +58,7 @@ Things you may want to do:
 * This is handled automatically on android if vlc is installed and you are using android application.
 * Set the timezone in the Dockerfile for you location. It is set to use New York time in Dockerfile currently.
 * Access the webapp in a browser at http://ip-address-of-docker-host:8080/
+* The apache2.conf file limits access to server to LAN subnet.   Before installing you want to modify to appropriate setting for your netowrk.
 
 The default username and password for the browser page is:
 
