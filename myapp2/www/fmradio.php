@@ -38,7 +38,7 @@ else {
    echo "Input did not validate";
 }
 }
-if(array_key_exists('dstop', $_POST)) {
+if(array_key_exists('stopplay', $_POST)) {
  echo "Sending Message to Stop Service";
 $message3=shell_exec('/bin/bash /var/www/html/scripts/signint.sh');
    echo "<pre>$message3</pre>";
@@ -79,7 +79,7 @@ fillSelect("../txtfiles/g1.txt","gain");
 </select>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
-<input type="submit" name="dstop" value="Stop Radio"/>
+<input type="submit" name="stopplay" value="Stop Radio"/>
 </form>
 </body>
 </html>
