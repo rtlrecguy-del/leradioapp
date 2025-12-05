@@ -52,7 +52,35 @@ if (is_resource($process)) {
     stream_set_blocking($pipes[2], 0);
   
 }
+if (is_resource($process)) {
+    // ... (non-blocking setup from step 2)
 
+    while (!feof($pipes[1]) || !feof($pipes[2])) {
+        // Dispatch any pending signals
+        pcntl_signal_dispatch();
+
+        // Check if a signal was received
+        if ($signal_received) {
+            echo "Signal caught, terminating ffmpeg child process...\n";
+            // Send SIGTERM to the ffmpeg process
+            proc_terminate($process, SIGTERM);
+            break; // Exit the loop
+        }
+
+        // Read and display output (optional, useful for debugging)
+        echo fgets($pipes[1]); // Read stdout
+        echo fgets($pipes[2]); // Read stderr
+        usleep(100000); // Sleep for a short time to prevent CPU hogging
+    }
+
+    // After the loop, close the process and pipes
+    fclose($pipes[0]);
+    fclose($pipes[1]);
+    fclose($pipes[2]);
+    $return_value = proc_close($process);
+
+    echo "ffmpeg process closed with return value: $return_value\n";
+}
 }
 if(array_key_exists('dstop', $_POST)) {
 
