@@ -31,7 +31,6 @@ $f=$varcommand.$varspace.$varfreq1_sanitized.$vardot.$varfreq_sanitized.$varspac
    if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternip, $varip_sanitized))) {
  echo "Successfully Started open client at address udp://@0.0.0.0:12345 best client for windows=ffmpeg, best client for linux-vlc,ffmpeg, best client for android vlc";
 $message3=shell_exec($f);
-   echo "<pre>$message3</pre>";
    }
 else {
    echo "Input did not validate";
@@ -78,22 +77,23 @@ fillSelect("../txtfiles/g1.txt","gain");
 <select style="width:20%;" name="freq" id="freq">
 </select>
 </div>
-</select>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
 <select style="width:20%;" name="varpid" id="varpid">
 </select>
 <?php
-$command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerpid.sh');
+$f="sudo /bin/bash /var/www/html/scripts/tunerpid.sh";
+$command_output=shell_exec(f);
 <select name="tunerselect" id="tunerselect">
             <option value="">Select which tuner to stop</option>
-       $lines = explode(PHP_EOL, $output);
+       $lines = explode(PHP_EOL, $command_output);
 
-    // Loop through each line and process it
+
     foreach ($lines as $line) {
                 echo "<option value=\"". htmlspecialchars($line) ."\">". htmlspecialchars($line) ."</option>";
-    } </select>
+    } 
 ?>
+</select>
    <input type="submit" name="stopplay" value="Stop Radio"/>
 </form>
 </body>
