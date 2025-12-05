@@ -45,7 +45,6 @@ $varspace=" ";
 if ((preg_match($varpatterntunerselect, $vartunerselect_sanitized)){
 $f=$command.$varspace.$vartunerselect_sanitized;
 $message3=shell_exec($f);
-   echo "<pre>$message3</pre>";
 }
 }
 ?>
