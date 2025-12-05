@@ -66,7 +66,6 @@ fillSelect("../txtfiles/g1.txt","gain");
 fillSelect("../txtfiles/sub.txt","substation")
 }
 </script>
-<label for="selectbox"">Goto WebPage:</label>
 <select id="selectbox" name="" onchange="javascript:location.href = this.value;">
      <option value="../index.php">Welcome Page</option>
     <option value="../fmrecord.php">Record SD FM</option>
