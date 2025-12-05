@@ -2,19 +2,23 @@
 if(isset($_POST['submit'])) {
 $message3=shell_exec('echo "test"');
    echo "<pre>$message3</pre>";
-}
 
 if(array_key_exists('dcron', $_POST)) {
 
 $varfreq=$_POST['freq1'];
+$varfreq_sanitized=htmlspecialchars($varfreq, ENT_QUOTES, 'UTF-8');
 
  $varfreq1=$_POST['freq'];
+$varfreq1_sanitized=htmlspecialchars($varfreq1, ENT_QUOTES, 'UTF-8');
+   
 $varperiod=".";
-$varcommandarams=$varfreq.$varperiod.$varfreq1;
+$varcommandparams=$varfreq.$varperiod.$varfreq1;
+$varcommandparams_sanitized=htmlspecialchars($varcommandparams, ENT_QUOTES, 'UTF-8');
 
 
 
 $varsubstation=$_POST['substation'];
+$varsubstation_sanitized=htmlspecialchars($varsubstation, ENT_QUOTES, 'UTF-8');
 
 
 
@@ -22,14 +26,22 @@ $varsubstation=$_POST['substation'];
 
 
 $varhour=$_POST['hour'];
+$varhour_sanitized=htmlspecialchars($varhour, ENT_QUOTES, 'UTF-8');
+   
 $vardayofshow=$_POST['dayofshow'];
-$vargain=$_POST['gain'];
+$vardayofshow_sanitized=htmlspecialchars($vardayofshow, ENT_QUOTES, 'UTF-8');
+
+   $vargain=$_POST['gain'];
+$vargain_sanitized=htmlspecialchars($vargain, ENT_QUOTES, 'UTF-8');
+   
 $varminute=$_POST['minute'];
+$varminute_sanitized=htmlspecialchars($varminute, ENT_QUOTES, 'UTF-8');
+   
 
 
 $varcommand="/bin/bash /var/www/html/scripts/hdcron.sh";
 $varspace=" ";
-$f=$varcommand.$varspace.$varcommandarams.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$varsubstation.$varspace.$varminute;
+$f=$varcommand.$varspace.$varcommandparams_sanitized.$varspace.$varhour_sanitized.$varspace.$vardayofshow_sanitized.$varspace.$varsubstation_sanitized.$varspace.$varminute_sanitized;
    $varpatternfreq1="/^\d{1,3}$/";
    $vargain="/^\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}$/";
