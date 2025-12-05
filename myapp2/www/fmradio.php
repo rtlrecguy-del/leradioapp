@@ -24,7 +24,7 @@ $f=$varcommand.$varspace.$vvarfreq1_sanitized.$vardot.$varfreq_sanitized.$varspa
    $varpatterngain="/\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}\$/";
    $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
-if ((preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && preg_match($varpatternip, $varip))) {
+if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternip, $varip_sanitized))) {
   echo "Successfully Started Open VLC on client at address udp://@0.0.0.0:12345";
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
