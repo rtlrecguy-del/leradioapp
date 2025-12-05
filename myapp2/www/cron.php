@@ -11,8 +11,7 @@ echo $sanitized_output;
 }
 if(array_key_exists('dcronbtn', $_POST)) {
     $vardel=$_POST['del'];
-    $vardel_sanitized=htmlspecialchars($vardel, ENT_QUOTES, 'UTF-8');
-
+$vardel_sanitized=filter_var($_POST['vardel'], FILTER_SANITIZE_NUMBER_INT);
 
 $varspace=" ";
 $varcommand="/bin/bash /var/www/html/scripts/delcron.sh";
