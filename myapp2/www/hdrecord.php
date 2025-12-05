@@ -56,7 +56,7 @@ else {
 <label for="selectbox">Goto WebPage:</label>
 <select id="selectbox" name="" onchange="javascript:location.href = this.value;">
 <option value="">Choose Page To Go To:</option>
-    <option value="../index.php">Welcome Page</option>
+      <option value="../index.php">Welcome Page</option>
     <option value="../fmrecord.php">Record SD FM</option>
     <option value="../hdrecord.php">Record HD Radio</option>
     <option value="../cron.php">Manage Recordings</option>
