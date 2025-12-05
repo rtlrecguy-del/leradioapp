@@ -1,5 +1,4 @@
-AuthUserFile /etc/apache2/.htpasswd
-AuthGroupFile /dev/null
-AuthName "Please Enter Password"
 AuthType Basic
+AuthName "Restricted Area"
+AuthUserFile /etc/apache2/.htpasswd
 Require valid-user
