@@ -1,5 +1,4 @@
 <?php
-
 $command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerstatus.sh');
 if (empty($command_output)) {
    echo "Nothing is recording or playing";
