@@ -95,7 +95,7 @@ $command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerpid.sh');
 
     // Loop through each line and process it
     foreach ($lines as $line) {
-                echo "<option value=\"". htmlspecialchars($option) ."\">". htmlspecialchars($option) ."</option>";
+                echo "<option value=\"". htmlspecialchars($line) ."\">". htmlspecialchars($line) ."</option>";
     } </select>
 ?>
    <input type="submit" name="stopplay" value="Stop Radio"/>
