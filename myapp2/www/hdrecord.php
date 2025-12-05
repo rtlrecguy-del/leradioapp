@@ -6,11 +6,8 @@ echo $sanitized_output;
 }
 if(array_key_exists('dcron', $_POST)) {
 
-$varfreq=$_POST['freq1'];
-$varfreq_sanitized=htmlspecialchars($varfreq, ENT_QUOTES, 'UTF-8');
-
- $varfreq1=$_POST['freq'];
-$varfreq1_sanitized=htmlspecialchars($varfreq1, ENT_QUOTES, 'UTF-8');
+$varfreq1_sanitized=filter_var($_POST['freq1'], FILTER_SANITIZE_NUMBER_INT);
+$varfreq_sanitized=filter_var($_POST['freq'], FILTER_SANITIZE_NUMBER_INT);
    
 $varperiod=".";
 $varcommandparams=$varfreq.$varperiod.$varfreq1;
