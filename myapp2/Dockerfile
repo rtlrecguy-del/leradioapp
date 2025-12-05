@@ -17,6 +17,7 @@ RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/hdcron.sh*" >> 
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/hdradio.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/hdrecord.sh*" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/sigint.sh" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/tunerstatus.sh" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /bin/bin/pkill mpv" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill rtl_fm" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill ffmpeg" >> /etc/sudoers
