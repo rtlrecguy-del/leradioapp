@@ -9,11 +9,6 @@ echo $sanitized_output;
 }
 
 
-if(array_key_exists('stoprec', $_POST)) {
- echo "Sending Message to Stop Service";
-$message3=shell_exec('sudo /bin/bash /var/www/html/scripts/signint.sh');
-   echo "<pre>$message3</pre>";
-}
 
 if(array_key_exists('lcron', $_POST)) {
 echo "Schedule for CRON JOB.   Day|Hour|Minute|Station";
@@ -60,8 +55,7 @@ $message1=shell_exec($f);
                 class="button" value="List Cron Jobs" />
 <input type="submit" name="dcronbtn"
                 class="button" value="Delete Cron Job" />
-  <input type="submit" name="stoprec"
-                class="button" value="Stop Recording"/> 
+ 
 
 </form>
 
