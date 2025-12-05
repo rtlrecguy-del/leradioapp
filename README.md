@@ -1,6 +1,13 @@
-lient device(android, browser) Interact with docker container to record on schedule or play a live stream of local FM and local HD FM channels to devices on a local network.   No Internet needed just intranet.
-Since no internet is needed for this Docker Container for security the Docker Host can be blocked from the Internet at a router and Only Accessible by Local Area Network.  Since very low powered Single board computers can run this Docker container when antenna is attached through USB it makes it very secure.   The more secure system is not on internet to begin with IMO 
+Client device(android, browser) Interact with docker container to record on schedule or play a live stream of local FM and local HD FM channels to devices on a local network.   No Internet needed just intranet.
+
+Since no internet is needed for this Docker Container for security the Docker Host can be blocked from the Internet at a router and Only Accessible by Local Area Network. 
+
+Since very low powered Single board computers can run this Docker container when antenna is attached through USB it makes it very secure. 
+
+The more secure system is not on internet to begin with IMO 
+
 There is no Guide data that is available that I know of worth anything for FM HD Radio in USA so updates are not needed. 
+
 It is even possible to run the Docker Container and Client on same Host such as a Raspberry PI and Not even have an Intranet or Lan Connection and Attach to a TV for example which  would be even more secure.  This would require that your best antenna reception was near your Television/Monitor.
 
 Project is located at:
