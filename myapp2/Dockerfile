@@ -1,5 +1,6 @@
 FROM php:8.2-apache
-ENV DEBIAN_FRONTEND=noninteractive
+RUN a2enmod rewrite
+RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/sites-available/000-default.conf
 RUN apt update -y && apt install -y at apache2-utils librtlsdr-dev git cmake && apt install -y apache2 sudo libapache2-mod-php php && apt install -y build-essential cmake autoconf libtool libao-dev libfftw3-dev && apt install -y ffmpeg openssl libmp3lame-dev git cmake pkg-config libusb-1.0-0-dev sox udev usbutils
 RUN apt install -y cron rtl-sdr mpv
 RUN echo -e "\nblacklist dvb_usb_rtl28xxu\nblacklist rtl2832\nblacklist rtl2830" >> /etc/modprobe.d/blacklist.conf
