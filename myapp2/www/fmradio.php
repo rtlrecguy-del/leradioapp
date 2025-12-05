@@ -21,7 +21,7 @@ echo $sanitized_output;
 
 if(array_key_exists('dcron', $_POST)) {
 
-
+$vartunerselect_sanitized=filter_var($_POST['tunerselect'], FILTER_SANITIZE_NUMBER_INT);
 $varfreq1_sanitized=filter_var($_POST['freq1'], FILTER_SANITIZE_NUMBER_INT);
 $varfreq_sanitized=filter_var($_POST['freq'], FILTER_SANITIZE_NUMBER_INT);
 $varip=$_SERVER['REMOTE_ADDR'];
@@ -46,10 +46,15 @@ else {
 }
 if(array_key_exists('stopplay', $_POST)) {
  echo "Sending Message to Stop Service";
-$message3=shell_exec('sudo /bin/bash /var/www/html/scripts/sigint.sh');
+$command="sudo /bin/bash /var/www/html/scripts/sigint.sh';
+$varspace=" ";
+ $varpatterntunerselect="/^\d{1,6}$/";
+if ((preg_match($varpatterntunerselect, $vartunerselect_sanitized){
+$f=$command.$varspace.$vartunerselect_sanitized;
+$message3=shell_exec($f);
    echo "<pre>$message3</pre>";
 }
-
+}
 ?>
 <html>
 <head>
