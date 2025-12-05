@@ -1,7 +1,8 @@
 <?php
 if(isset($_POST['submit'])) {
-$message3=shell_exec('echo "test"');
-   echo "<pre>$message3</pre>";
+$command_output = shell_exec('echo "test');
+$sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+echo $sanitized_output;
 
 if(array_key_exists('dcron', $_POST)) {
 
