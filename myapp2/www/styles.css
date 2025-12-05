@@ -172,3 +172,32 @@ width: 400px;
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.red-button {
+            background-color: #FF0000; /* red */
+            border: none;
+            color: white;
+            padding: 2px 6px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 4px;
+            margin: 1px 1px;
+            cursor: pointer;
+            border-radius: 3px; 
+}
+.green-button {
+            background-color: ##AFE1AF; 
+            border: none;
+            color: white;
+            padding: 2px 6px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 4px;
+            margin: 1px 1px;
+            cursor: pointer;
+            border-radius: 3px; 
+}
+
+
+  
