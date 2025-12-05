@@ -87,12 +87,16 @@ fillSelect("../txtfiles/g1.txt","gain");
 <input type="submit" name="dcron" value="Stream Radio"/>
 <select style="width:20%;" name="varpid" id="varpid">
 </select>
-<?php<select name="tunerselect" id="tunerselect">
+<?php
+$command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerpid.sh');
+<select name="tunerselect" id="tunerselect">
             <option value="">Select which tuner to stop</option>
-     
-foreach ($options as $option) {
+       $lines = explode(PHP_EOL, $output);
+
+    // Loop through each line and process it
+    foreach ($lines as $line) {
                 echo "<option value=\"". htmlspecialchars($option) ."\">". htmlspecialchars($option) ."</option>";
-         
+    } </select>
 ?>
    <input type="submit" name="stopplay" value="Stop Radio"/>
 </form>
