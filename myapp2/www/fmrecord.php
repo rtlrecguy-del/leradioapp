@@ -1,6 +1,9 @@
 <?php
-if(isset($_POST['submit'])) {
 $command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerstatus.sh');
+if (empty($command_output)) {
+   echo "Nothing is recording or playing";
+}
+else {
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 echo $sanitized_output;
 }
@@ -46,7 +49,7 @@ else {
 }}
    if(array_key_exists('stoprec', $_POST)) {
  echo "Sending Message to Stop Service";
-$message3=shell_exec('sudo /bin/bash /var/www/html/scripts/signint.sh');
+$message3=shell_exec('sudo /bin/bash /var/www/html/scripts/sigint.sh');
    echo "<pre>$message3</pre>";
 }
 
