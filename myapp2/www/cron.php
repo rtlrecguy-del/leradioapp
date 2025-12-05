@@ -61,6 +61,7 @@ $message1=shell_exec($f);
                 class="button" value="List Cron Jobs" />
 <input type="submit" name="dcronbtn"
                 class="button" value="Delete Cron Job" />
+  <input type="submit" name="stoprec" value="Stop Recording"/> 
 
 </form>
 
