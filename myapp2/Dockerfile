@@ -43,7 +43,7 @@ RUN chmod 777 /entrypoint.sh
 RUN chmod u+s /usr/sbin/cron
 RUN touch /var/log/cron.log
 RUN usermod -s /bin/bash www-data
-RUN chown www-data:www-data /var/log/apache2/*.log
+RUN chown -R www-data:www-data /var/log/apache2
 USER www-data
 ENTRYPOINT ["/entrypoint.sh"]
  
