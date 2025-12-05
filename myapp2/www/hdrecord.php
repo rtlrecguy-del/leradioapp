@@ -3,7 +3,7 @@ if(isset($_POST['submit'])) {
 $command_output = shell_exec('echo "test');
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 echo $sanitized_output;
-
+}
 if(array_key_exists('dcron', $_POST)) {
 
 $varfreq=$_POST['freq1'];
