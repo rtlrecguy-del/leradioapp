@@ -3,8 +3,7 @@ if(isset($_POST['submit'])) {
 $command_output = shell_exec('echo "test');
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 echo $sanitized_output;
-}
-$command = "ps aux | grep '[f]fmpeg'";
+    $command = "ps aux | grep '[f]fmpeg'";
     $output = shell_exec($command);
 
     if ($output === null) {
@@ -21,6 +20,7 @@ $command = "ps aux | grep '[f]fmpeg'";
 
         echo "Total Number of Processes Recording or Listening: " . $ffmpeg_process_count . "\n";
     }
+}
 if(array_key_exists('dcron', $_POST)) {
 
 $varfreq1_sanitized=filter_var($_POST['freq1'], FILTER_SANITIZE_NUMBER_INT);
