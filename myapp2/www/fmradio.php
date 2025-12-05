@@ -89,9 +89,12 @@ $command_output=shell_exec(f);
        $lines = explode(PHP_EOL, $command_output);
 
 
+   if (empty($lines)) {
+}
+else {
     foreach ($lines as $line) {
                 echo "<option value=\"". htmlspecialchars($line) ."\">". htmlspecialchars($line) ."</option>";
-    } 
+    }}
 ?>
 </select>
    <input type="submit" name="stopplay" value="Stop Radio"/>
