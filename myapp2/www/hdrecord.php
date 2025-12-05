@@ -65,7 +65,7 @@ if(array_key_exists('stoprec', $_POST)) {
 $command="sudo /bin/bash /var/www/html/scripts/sigint.sh';
 $varspace=" ";
  $varpatterntunerselect="/^\d{1,6}$/";
-if ((preg_match($varpatterntunerselect, $vartunerselect_sanitized){
+if ((preg_match($varpatterntunerselect, $vartunerselect_sanitized)){
 $f=$command.$varspace.$vartunerselect_sanitized;
 $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
