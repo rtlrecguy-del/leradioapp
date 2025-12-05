@@ -4,6 +4,18 @@ $command_output = shell_exec('echo "test');
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 echo $sanitized_output;
 }
+
+
+
+exec("pgrep ffmpeg", $output, $return);
+if ($return == 0) {
+   echo '<button class="green-button">Click Me</button>
+}
+else {
+
+
+}
+
 if(array_key_exists('lcron', $_POST)) {
 echo "Schedule for CRON JOB.   Day|Hour|Minute|Station";
 $command_output=shell_exec('crontab -l | cat -n | sed 's/sudo /var/www/html/scripts///g'');
