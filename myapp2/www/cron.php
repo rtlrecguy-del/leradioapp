@@ -4,16 +4,25 @@ $command_output = shell_exec('echo "test');
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 echo $sanitized_output;
 }
+$command = "ps aux | grep '[f]fmpeg'";
+    $output = shell_exec($command);
+
+    if ($output === null) {
+        echo "No Processes Running\n";
+    } else {
+        $processes = explode("\n", trim($output));
+        $ffmpeg_process_count = count($processes);
+
+        // If no processes are found, count will be 1 due to the empty string from explode,
+        // so adjust if the output is empty after trimming.
+        if (empty(trim($output))) {
+            $ffmpeg_process_count = 0;
+        }
+
+        echo "Total Number of Processes Recording or Listening: " . $ffmpeg_process_count . "\n";
+    }
 
 
-
-exec("pgrep ffmpeg", $output, $return);
-if ($return == 0) {
-   echo 'Recording/streaming ... <button class="red-button">Click Me</button>';
-}
-else {
-   echo 'Not Recording/streaming ... <button class="green-button">Click Me</button>';
-} 
 if(array_key_exists('stoprec', $_POST)) {
  echo "Sending Message to Stop Service";
 $message3=shell_exec('/bin/bash /var/www/html/scripts/signint.sh');
