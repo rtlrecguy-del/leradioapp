@@ -1,7 +1,11 @@
 <?php
-if(isset($_POST['submit'])) {
-$command_output = shell_exec('echo "test');
+$command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerstatus.sh');
+if (empty($command_output)) {
+   echo "Nothing is recording or playing";
+}
+else {
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+echo $sanitized_output;
 }
 
 
