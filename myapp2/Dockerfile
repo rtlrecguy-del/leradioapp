@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.4-apache-trixie
 RUN a2enmod rewrite
 RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/sites-available/000-default.conf
 COPY ./htaccess /var/www/html/.htaccess
