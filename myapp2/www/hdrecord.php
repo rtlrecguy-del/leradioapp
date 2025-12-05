@@ -1,25 +1,8 @@
 <?php
 if(isset($_POST['submit'])) {
-$command_output = shell_exec('echo "test');
+$command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerstatus.sh');
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 echo $sanitized_output;
-     $command = "ps aux | grep '[f]fmpeg'";
-    $output = shell_exec($command);
-
-    if ($output === null) {
-        echo "No Processes Running\n";
-    } else {
-        $processes = explode("\n", trim($output));
-        $ffmpeg_process_count = count($processes);
-
-        // If no processes are found, count will be 1 due to the empty string from explode,
-        // so adjust if the output is empty after trimming.
-        if (empty(trim($output))) {
-            $ffmpeg_process_count = 0;
-        }
-$sanitized_process_count=htmlspecialchars($ffmpeg_process_count_output, ENT_QUOTES | ENT_HTML5, 'UTF-8')
-        echo "Total Number of Processes Recording or Listening: " . $sanitized_process_count. "\n";
-    }
 }
 
 if(array_key_exists('dcron', $_POST)) {
