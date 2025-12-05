@@ -6,20 +6,27 @@ $message3=shell_exec('echo "test"');
 if(array_key_exists('dcron', $_POST)) {
 
 $varfreq1=$_POST['freq1'];
-$ip=$_SERVER['REMOTE_ADDR'];
+$varfreq1_sanitized=htmlspecialchars($varfreq1, ENT_QUOTES, 'UTF-8');
+
+$varip=$_SERVER['REMOTE_ADDR'];
+$varip_sanitized=htmlspecialchars($varip, ENT_QUOTES, 'UTF-8');
 
  $varfreq=$_POST['freq'];
+$varfreq_sanitized=htmlspecialchars($varfreq, ENT_QUOTES, 'UTF-8');
+   
 $varperiod=".";
 $varcommandarams=$varfreq1.$varperiod.$varfreq;
-$varsudo="sudo";
+$varcommandparams_sanitized=htmlspecialchars($varcommandparams, ENT_QUOTES, 'UTF-8');
+
 
 
 $varsubstation=$_POST['substation'];
+$varsubstation_sanitized=htmlspecialchars($varsubstation, ENT_QUOTES, 'UTF-8');
 
 
-$varcommand="/bin/bash /var/www/html/scripts/hdradio.sh";
+$varcommand="sudo /bin/bash /var/www/html/scripts/hdradio.sh";
 $varspace=" ";
-$f=$varsudo.$varspace.$varcommand.$varspace.$varcommandarams.$varspace.$varsubstation.$varspace.$ip;
+$f=$varcommand_sanitized.$varspace.$varcommandarams_sanitized.$varspace.$varsubstation_sanitized.$varspace.$varip_sanitized;
    $varpatternfreq1="/^\d{1,3}/";
    $varpatternfreq="/^\d{1,3}$/";
    $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
