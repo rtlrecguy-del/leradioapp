@@ -46,6 +46,7 @@ else {
 
 }
 if(array_key_exists('stopplay', $_POST)) {
+   $vartunerselect_sanitized=filter_var($_POST['pid'], FILTER_SANITIZE_NUMBER_INT);
  echo "Sending Message to Stop Service";
 $command="sudo /bin/bash /var/www/html/scripts/sigint.sh";
 $varspace=" ";
