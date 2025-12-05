@@ -26,6 +26,7 @@ RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN dpkg-reconfigure tzdata
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 RUN usermod -aG sudo www-data
+RUN chown -R www-data:www-data /var/www/html/
 EXPOSE 80
 EXPOSE 12345
 RUN chmod -R +x /var/www/html/scripts/
