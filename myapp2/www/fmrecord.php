@@ -119,6 +119,17 @@ fillSelect("../txtfiles/cday.txt","dayofshow");
 </br></br>
 
 <input type="submit" name="dcron" value="Record FM"/>
+<?php
+$command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerpid.sh');
+<select name="tunerselect" id="tunerselect">
+            <option value="">Select which tuner to stop</option>
+       $lines = explode(PHP_EOL, $output);
+
+    // Loop through each line and process it
+    foreach ($lines as $line) {
+                echo "<option value=\"". htmlspecialchars($line) ."\">". htmlspecialchars($line) ."</option>";
+    } </select>
+?>   
 <input type="submit" name="stoprec" value="Stop Recording"/>
 </form>
 </body>
