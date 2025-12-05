@@ -63,7 +63,7 @@ else {
 }
 if(array_key_exists('stoprec', $_POST)) {
  echo "Sending Message to Stop Service";
-$message3=shell_exec('sudo /bin/bash /var/www/html/scripts/signint.sh');
+$message3=shell_exec('sudo /bin/bash /var/www/html/scripts/sigint.sh');
    echo "<pre>$message3</pre>";
 }
 
