@@ -5,7 +5,8 @@ $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'U
 echo $sanitized_output;
 }
 if(array_key_exists('lcron', $_POST)) {
-$command_output=shell_exec('crontab -l | cat -n');
+echo "Schedule for CRON JOB.   Day|Hour|Minute|Station";
+$command_output=shell_exec('crontab -l | cat -n | sed 's/sudo /var/www/html/scripts///g'');
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 echo $sanitized_output;
 }
