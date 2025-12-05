@@ -7,11 +7,8 @@ echo $sanitized_output;
 
 if(array_key_exists('dcron', $_POST)) {
 
-$varfreq1=$_POST['freq'];
-$varfreq_sanitized=htmlspecialchars($varfreq, ENT_QUOTES, 'UTF-8');
-
-   $varfreq=$_POST['freq1'];
-$varfreq_sanitized=htmlspecialchars($varfreq, ENT_QUOTES, 'UTF-8');
+$varfreq1_sanitized=filter_var($_POST['freq1'], FILTER_SANITIZE_NUMBER_INT);
+$varfreq_sanitized=filter_var($_POST['freq'], FILTER_SANITIZE_NUMBER_INT);
    
 $varcommanderiod=".";
 $varcommandarams=$varfreq.$varcommanderiod.$varfreq1;
