@@ -1,5 +1,4 @@
-<?php
-<html>
+<<html>
 <body style="background-color: blue;"><body>
 <head>
  <script src="../script.js"></script> 
