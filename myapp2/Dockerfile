@@ -38,7 +38,8 @@ RUN chmod -R 755 /var/www/html
 RUN chmod +x /entrypoint.sh
 RUN chmod u+s /usr/sbin/cron
 RUN usermod -s /bin/bash www-data
-RUN chown -R www-data:www-data /var/log/apache2/
+RUN chown -R root:www-data /var/log/apache2/
+RUN chmod -R 664 /var/log/apache2
 USER www-data
 ENTRYPOINT ["/entrypoint.sh"]
  
