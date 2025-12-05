@@ -13,8 +13,12 @@ if ($return == 0) {
 }
 else {
    echo 'Not Recording/streaming ... <button class="green-button">Click Me</button>';
+} 
+if(array_key_exists('stoprec', $_POST)) {
+ echo "Sending Message to Stop Service";
+$message3=shell_exec('/bin/bash /var/www/html/scripts/signint.sh');
+   echo "<pre>$message3</pre>";
 }
-
 
 if(array_key_exists('lcron', $_POST)) {
 echo "Schedule for CRON JOB.   Day|Hour|Minute|Station";
