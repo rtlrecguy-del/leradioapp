@@ -37,9 +37,6 @@ WORKDIR /var/www/html/noisemod
 RUN git clone https://github.com/GregorR/rnnoise-models.git
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html
-RUN mkdir /app
-WORKDIR /app
-RUN chmod 777 /entrypoint.sh
 RUN chmod u+s /usr/sbin/cron
 RUN touch /var/log/cron.log
 RUN usermod -s /bin/bash www-data
