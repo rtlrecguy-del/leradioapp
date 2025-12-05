@@ -15,7 +15,7 @@ $vargain=$_POST['gain'];
 $varsudo="sudo";
 
 
-$varcommand="/bin/bash /var/www/html/scripts/sradio.sh";
+$varcommand="/bin/bash /var/www/html/scripts/fmradio.sh";
 $varspace=" ";
 $vardot=".";
 $f=$varsudo.$varspace.$varcommand.$varspace.$varfreq1.$vardot.$varfreq.$varspace.$ip;
