@@ -6,13 +6,6 @@ if (empty($command_output)) {
 else {
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 echo $sanitized_output;
-   
-   <select name="favorite_color" id="favorite_color">
-        <option value="">-- Select a color --</option>
-        <?php foreach ($colors as $color) { ?>
-            <option value="<?php echo strtolower($color); ?>"><?php echo $color; ?></option>
-        <?php } ?>
-    </select>
 }
 
 
