@@ -25,7 +25,7 @@ $vargain=$_POST['gain'];
 $varminute=$_POST['minute'];
 
 
-$varcommand="/bin/bash /var/www/html/scripts/cron.sh";
+$varcommand="/bin/bash /var/www/html/scripts/fmcron.sh";
 $varspace=" ";
 $f=$varcommand.$varspace.$varcommandarams.$varspace.$varhour.$varspace.$vardayofshow.$varspace.$vargain.$varspace.$varminute;
    $varpatternfreq1="/^\d{1,3}$/";
