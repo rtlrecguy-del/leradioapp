@@ -26,7 +26,7 @@ $sanitized_process_count=htmlspecialchars($ffmpeg_process_count_output, ENT_QUOT
 
 if(array_key_exists('stoprec', $_POST)) {
  echo "Sending Message to Stop Service";
-$message3=shell_exec('/bin/bash /var/www/html/scripts/signint.sh');
+$message3=shell_exec('sudo /bin/bash /var/www/html/scripts/signint.sh');
    echo "<pre>$message3</pre>";
 }
 
