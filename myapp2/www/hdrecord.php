@@ -72,7 +72,6 @@ $message3=shell_exec('sudo /bin/bash /var/www/html/scripts/sigint.sh');
 <script src="../script.js"></script>
 <link rel="stylesheet" href="../styles.css">
 </head>
-<label for="selectbox">Goto WebPage:</label>
 <select id="selectbox" name="" onchange="javascript:location.href = this.value;">
 <option value="">Choose Page To Go To:</option>
       <option value="../index.php">Welcome Page</option>
