@@ -76,8 +76,6 @@ fillSelect("../txtfiles/g1.txt","gain");
 <select style="width:20%;" name="freq" id="freq">
 </select>
 </div>
-<label for="gain" for="station">Choose the antenna gain:</label>
-<select name="gain" id="gain">
 </select>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
