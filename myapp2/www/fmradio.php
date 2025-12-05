@@ -29,7 +29,7 @@ $f=$varcommand.$varspace.$varfreq1_sanitized.$vardot.$varfreq_sanitized.$varspac
    $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
 
    if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternip, $varip_sanitized))) {
- echo "Successfully Started Open VLC on client at address udp://@0.0.0.0:12345";
+ echo "Successfully Started open client at address udp://@0.0.0.0:12345 best client for windows=ffmpeg, best client for linux-vlc,ffmpeg, best client for android vlc";
 $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
    }
