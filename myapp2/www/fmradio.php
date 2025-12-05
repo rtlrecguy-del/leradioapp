@@ -10,7 +10,6 @@ $varfreq1=$_POST['freq1'];
 $ip=$_SERVER['REMOTE_ADDR'];
 
 
-$vargain=$_POST['gain'];
 
 $varsudo="sudo";
 
@@ -23,7 +22,7 @@ $f=$varsudo.$varspace.$varcommand.$varspace.$varfreq1.$vardot.$varfreq.$varspace
    $varpatterngain="/\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}\$/";
    $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
-if ((preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && preg_match($varpatterngain, $vargain) && preg_match($varpatternip, $ip))) {
+if ((preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq) && preg_match($varpatternip, $ip))) {
   echo "Successfully Started Open VLC on client at address udp://@0.0.0.0:12345";
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
