@@ -39,7 +39,9 @@ else {
 }
 }
 if(array_key_exists('dstop', $_POST)) {
-pcntl_signal(SIGTERM, 'sigint');
+ echo "Sending Message to Stop Service";
+$message3=shell_exec('/bin/bash /var/www/html/scripts/signint.sh');
+   echo "<pre>$message3</pre>";
 }
 
 ?>
