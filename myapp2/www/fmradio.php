@@ -63,7 +63,6 @@ fillSelect("../txtfiles/m3.txt","freq");
 fillSelect("../txtfiles/g1.txt","gain");
 }
 </script>
-<label for="selectbox"">Goto WebPage:</label>
 <select id="selectbox" name="" onchange="javascript:location.href = this.value;">
  <option value="">Choose Page To Go To:</option>
     <option value="../index.php">Welcome Page</option>
