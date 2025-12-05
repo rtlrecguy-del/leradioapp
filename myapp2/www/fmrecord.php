@@ -50,20 +50,14 @@ if ((preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $var
 else { 
    echo "Your input didn't validate";
 }
-if(array_key_exists('stoprec', $_POST)) {
-$uud="sudo /usr/bin/pkill ffmpeg";
-$message3=shell_exec($uud);
-   echo "<pre>$message3</pre>";
-$uut="sudo /usr/bin/pkill rtl_fm";
-$message3=shell_exec($uut);
-   echo "<pre>$message3</pre>";
-$uup="sudo /usr/bin/pkill nrsc5";
-$message3=shell_exec($uup);
+   if(array_key_exists('stoprec', $_POST)) {
+ echo "Sending Message to Stop Service";
+$message3=shell_exec('/bin/bash /var/www/html/scripts/signint.sh');
    echo "<pre>$message3</pre>";
 }
-   
 
-}
+
+
 
 
 ?>
