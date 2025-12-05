@@ -9,12 +9,12 @@ echo $sanitized_output;
 
 exec("pgrep ffmpeg", $output, $return);
 if ($return == 0) {
-   echo '<button class="green-button">Click Me</button>
+   echo 'Recording ... <button class="red-button">Click Me</button>
 }
 else {
-
-
+   echo 'Not Recording ... <button class="green-button">Click Me</button>
 }
+
 
 if(array_key_exists('lcron', $_POST)) {
 echo "Schedule for CRON JOB.   Day|Hour|Minute|Station";
