@@ -14,7 +14,7 @@ echo $sanitized_output;
 
 if(array_key_exists('dcron', $_POST)) {
 
-$vartunerselect_sanitized=filter_var($_POST['tunerselect'], FILTER_SANITIZE_NUMBER_INT);
+
 $varfreq1_sanitized=filter_var($_POST['freq1'], FILTER_SANITIZE_NUMBER_INT);
 $varfreq_sanitized=filter_var($_POST['freq'], FILTER_SANITIZE_NUMBER_INT);
 $varip=$_SERVER['REMOTE_ADDR'];
@@ -37,7 +37,8 @@ else {
 }
 }
 if(array_key_exists('stopplay', $_POST)) {
- echo "Sending Message to Stop Service";
+$vartunerselect_sanitized=filter_var($_POST['pid'], FILTER_SANITIZE_NUMBER_INT);
+   echo "Sending Message to Stop Service";
 $command="sudo /bin/bash /var/www/html/scripts/sigint.sh";
 $varspace=" ";
  $varpatterntunerselect="/^\d{1,6}$/";
@@ -79,8 +80,8 @@ fillSelect("../txtfiles/g1.txt","gain");
 </div>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
-<select style="width:20%;" name="varpid" id="varpid">
-</select>
+<label for="pid">Stop PID number:</label>
+  <input  type="text" id="pid" name="pid">
 <input type="submit" name="stopplay" value="Stop Radio"/>
 </form>
 </body>
