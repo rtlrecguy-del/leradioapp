@@ -88,22 +88,22 @@ fillSelect("../txtfiles/cday.txt","dayofshow");
 </div>
 
 
-<label for="minute">minute:</label>
+<label for="minute">Minute:</label>
 <select name="minute" id="minute">
 </select>
 
 
 
-<label for="hour">hour:</label>
+<label for="hour">Hour:</label>
 
 <select name="hour" id="hour">
 </select>
-<label for="day of show">day of show</label>
+<label for="day of show">Day of Show</label>
 <select name="dayofshow" id="dayofshow">
 </select>
 
 
-<label for="gain">gain:</label>
+<label for="gain">Gain:</label>
 <select name="gain" id="gain">
 </select>
 
