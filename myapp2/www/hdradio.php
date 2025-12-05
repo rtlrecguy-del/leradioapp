@@ -53,7 +53,6 @@ $varspace=" ";
 if ((preg_match($varpatterntunerselect, $vartunerselect_sanitized)){
 $f=$command.$varspace.$vartunerselect_sanitized;
 $message3=shell_exec($f);
-   echo "<pre>$message3</pre>";
 }
 }
 
@@ -99,7 +98,6 @@ $command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerpid.sh');
             <option value="">Select which tuner to stop</option>
        $lines = explode(PHP_EOL, $output);
 
-    // Loop through each line and process it
     foreach ($lines as $line) {
                 echo "<option value=\"". htmlspecialchars($line) ."\">". htmlspecialchars($line) ."</option>";
     } </select>
