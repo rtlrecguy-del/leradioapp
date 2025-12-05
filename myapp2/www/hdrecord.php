@@ -124,6 +124,7 @@ fillSelect("../txtfiles/sub.txt","substation");
 
 
 
-<input type="submit" name="dcron" value="submit"/>
+<input type="submit" name="dcron" value="Schedule Recording"/>
+   <input type="submit" name="stoprec" value="Stop Recording"/>
 </form>
 </html>
