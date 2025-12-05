@@ -18,7 +18,11 @@ The more secure system is not on internet to begin with IMO
 
 There is no Guide data that is available that I know of worth anything for FM HD Radio in USA so updates are not needed. 
 
-It is even possible to run the Docker Container and Client on same Host such as a Raspberry PI and Not even have an Intranet or Lan Connection and Attach to a TV for example which  would be even more secure.  This would require that your best antenna reception was near your Television/Monitor.
+It is even possible to run the Docker Container and Client on same Host such as a Raspberry PI and Not even have an Intranet or Lan Connection and Attach to a TV for example which  would be even more secure.
+
+This would require that your best antenna reception was near your Television/Monitor.
+
+You would access the device on the Host from a web browser at 127.0.0.0:8080
 
 One issue that may happen on install is the dongle is not being recognized.
 To correct use the lsusb command to make sure that the dongle is being recognized on the Host as well as the Docker Container.
