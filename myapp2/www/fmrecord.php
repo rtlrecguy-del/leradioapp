@@ -47,9 +47,14 @@ if ((preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $var
 else { 
    echo "Your input didn't validate";
 }}
-   if(array_key_exists('stoprec', $_POST)) {
+ if(array_key_exists('stopplay', $_POST)) {
  echo "Sending Message to Stop Service";
-$message3=shell_exec('sudo /bin/bash /var/www/html/scripts/sigint.sh');
+$command="sudo /bin/bash /var/www/html/scripts/sigint.sh';
+$varspace=" ";
+ $varpatterntunerselect="/^\d{1,6}$/";
+if ((preg_match($varpatterntunerselect, $vartunerselect_sanitized){
+$f=$command.$varspace.$vartunerselect_sanitized;
+$message3=shell_exec($f);
    echo "<pre>$message3</pre>";
 }
 
