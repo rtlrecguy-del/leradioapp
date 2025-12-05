@@ -92,16 +92,8 @@ fillSelect("../txtfiles/sub.txt","substation")
 </div>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
-<?php
-$command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerpid.sh');
-<select name="tunerselect" id="tunerselect">
-            <option value="">Select which tuner to stop</option>
-       $lines = explode(PHP_EOL, $output);
-
-    foreach ($lines as $line) {
-                echo "<option value=\"". htmlspecialchars($line) ."\">". htmlspecialchars($line) ."</option>";
-    } </select>
-?>
+<label for="pid">Stop PID number:</label>
+  <input  type="text" id="pid" name="pid">
    <input type="submit" name="stopplay" value="Stop Radio"/>
 </form>
 </body>
