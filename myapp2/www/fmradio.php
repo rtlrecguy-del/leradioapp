@@ -33,69 +33,14 @@ $f=$varcommand.$varspace.$vvarfreq1_sanitized.$vardot.$varfreq_sanitized.$varspa
    $varpatterngain="/\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}\$/";
    $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
-$descriptorspec = array(
-   0 => array("pipe", "r"),  // stdin
-   1 => array("pipe", "w"),  // stdout
-   2 => array("pipe", "w")   // stderr
-);
 
-$pipes = array();
    if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternip, $varip_sanitized))) {
-  echo "Successfully Started Open VLC on client at address udp://@0.0.0.0:12345";
-$process = proc_open($f, $descriptorspec, $pipes);
+ echo "Successfully Started Open VLC on client at address udp://@0.0.0.0:12345";
+
    }
 else {
    echo "Input did not validate";
 }
-if (is_resource($process)) {
-    stream_set_blocking($pipes[1], 0);
-    stream_set_blocking($pipes[2], 0);
-  
-}
-if (is_resource($process)) {
-    // ... (non-blocking setup from step 2)
-
-    while (!feof($pipes[1]) || !feof($pipes[2])) {
-        // Dispatch any pending signals
-        pcntl_signal_dispatch();
-
-        // Check if a signal was received
-        if ($signal_received) {
-            echo "Signal caught, terminating ffmpeg child process...\n";
-            // Send SIGTERM to the ffmpeg process
-            proc_terminate($process, SIGTERM);
-            break; // Exit the loop
-        }
-
-        // Read and display output (optional, useful for debugging)
-        echo fgets($pipes[1]); // Read stdout
-        echo fgets($pipes[2]); // Read stderr
-        usleep(100000); // Sleep for a short time to prevent CPU hogging
-    }
-
-    // After the loop, close the process and pipes
-    fclose($pipes[0]);
-    fclose($pipes[1]);
-    fclose($pipes[2]);
-    $return_value = proc_close($process);
-
-    echo "ffmpeg process closed with return value: $return_value\n";
-}
-
-$signal_received = false;
-
-function sig_handler($signo) {
-    global $signal_received;
-    echo "PHP script received signal: " . $signo . "\n";
-    $signal_received = true;
-}
-
-// Register the signal handler for SIGTERM and SIGINT
-pcntl_signal(SIGTERM, "sig_handler");
-pcntl_signal(SIGINT, "sig_handler");
-
-
-   
 }
 if(array_key_exists('dstop', $_POST)) {
 pcntl_signal(SIGTERM, 'sigint');
