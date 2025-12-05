@@ -32,8 +32,6 @@ All recordings are setup as repeating.  Remove from CRON in app if you want to c
  
 Program filters out static using noise models for reception problems such as hiss.
 
-Device records or listens to one station at a time. 
-
 I will be trying to improve this but multiple tuners are less needed for radio.
 
 When A recording is scheduled it is generally set to run for an hour if not asked for duration.
