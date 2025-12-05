@@ -6,6 +6,13 @@ if (empty($command_output)) {
 else {
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 echo $sanitized_output;
+   
+   <select name="favorite_color" id="favorite_color">
+        <option value="">-- Select a color --</option>
+        <?php foreach ($colors as $color) { ?>
+            <option value="<?php echo strtolower($color); ?>"><?php echo $color; ?></option>
+        <?php } ?>
+    </select>
 }
 
 
@@ -78,7 +85,16 @@ fillSelect("../txtfiles/g1.txt","gain");
 </select>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
-<input type="submit" name="stopplay" value="Stop Radio"/>
+<select style="width:20%;" name="varpid" id="varpid">
+</select>
+<?php<select name="tunerselect" id="tunerselect">
+            <option value="">Select which tuner to stop</option>
+     
+foreach ($options as $option) {
+                echo "<option value=\"". htmlspecialchars($option) ."\">". htmlspecialchars($option) ."</option>";
+         
+?>
+   <input type="submit" name="stopplay" value="Stop Radio"/>
 </form>
 </body>
 </html>
