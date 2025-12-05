@@ -1,10 +1,10 @@
-No Internet is needed for this Container.   Just intranet.  
+Since no intranet is needed for this Docker Container for security the Docker Host can be blocked from the Internet 
 
-I suggest for security that in your router you block the Single Board Computer(for example) Docker Server from the internet as an extra security precaution. 
+at a router and Only Accessible by Local Area Network.  Since very low powered Single board computers can run this Docker container when
 
-It doesn't require updates for a guide because guide data isn't relatively available for FM Radio.
+antenna is attached through USB it makes it very secure.   The most secure system is not on internet to begin with IMO 
 
-Perfect for people with Data Plans or limited internet.
+There is no Guide data that is available that I know of worth anything for FM HD Radio in USA so updates are not needed. 
 
 
 Example Video:
