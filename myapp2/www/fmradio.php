@@ -12,8 +12,7 @@ echo $sanitized_output;
         $processes = explode("\n", trim($output));
         $ffmpeg_process_count = count($processes);
 
-        // If no processes are found, count will be 1 due to the empty string from explode,
-        // so adjust if the output is empty after trimming.
+    
         if (empty(trim($output))) {
             $ffmpeg_process_count = 0;
         }
