@@ -48,7 +48,8 @@ else {
    echo "Your input didn't validate";
 }}
  if(array_key_exists('stoprec', $_POST)) {
- echo "Sending Message to Stop Service";
+$vartunerselect_sanitized=filter_var($_POST['pid'], FILTER_SANITIZE_NUMBER_INT);
+    echo "Sending Message to Stop Service";
 $command="sudo /bin/bash /var/www/html/scripts/sigint.sh';
 $varspace=" ";
  $varpatterntunerselect="/^\d{1,6}$/";
@@ -58,7 +59,7 @@ $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
 }
 
-
+}
 
 
 
