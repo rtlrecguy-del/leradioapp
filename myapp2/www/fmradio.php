@@ -6,8 +6,11 @@ $message3=shell_exec('echo "test"');
 if(array_key_exists('dcron', $_POST)) {
 
 $varfreq=$_POST['freq'];
+$varfreq_sanitized=htmlspecialchars($varfreq, ENT_QUOTES, 'UTF-8');
 $varfreq1=$_POST['freq1'];
-$ip=$_SERVER['REMOTE_ADDR'];
+$varfreq1_sanitized=htmlspecialchars($vavfreq1, ENT_QUOTES, 'UTF-8');
+$varip=$_SERVER['REMOTE_ADDR'];
+$varip_sanitized=htmlspecialchars($varip, ENT_QUOTES, 'UTF-8');
 
 
 
@@ -17,7 +20,7 @@ $varsudo="sudo";
 $varcommand="/bin/bash /var/www/html/scripts/fmradio.sh";
 $varspace=" ";
 $vardot=".";
-$f=$varsudo.$varspace.$varcommand.$varspace.$varfreq1.$vardot.$varfreq.$varspace.$ip;
+$f=$varsudo.$varspace.$varcommand.$varspace.$varfreq1_sanitized.$vardot.$varfreq_sanitized.$varspace.$varip_sanitized;
    $varpatternfreq1="/^\d{1,3}$/";
    $varpatterngain="/\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}\$/";
