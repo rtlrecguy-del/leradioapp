@@ -81,18 +81,24 @@ if (is_resource($process)) {
 
     echo "ffmpeg process closed with return value: $return_value\n";
 }
+
+$signal_received = false;
+
+function sig_handler($signo) {
+    global $signal_received;
+    echo "PHP script received signal: " . $signo . "\n";
+    $signal_received = true;
+}
+
+// Register the signal handler for SIGTERM and SIGINT
+pcntl_signal(SIGTERM, "sig_handler");
+pcntl_signal(SIGINT, "sig_handler");
+
+
+   
 }
 if(array_key_exists('dstop', $_POST)) {
-
-$uud="sudo /usr/bin/pkill ffmpeg";
-$message3=shell_exec($uud);
-   echo "<pre>$message3</pre>";
-$uut="sudo /usr/bin/pkill rtl_fm";
-$message3=shell_exec($uut);
-   echo "<pre>$message3</pre>";
-$uup="sudo /usr/bin/pkill nrsc5";
-$message3=shell_exec($uup);
-   echo "<pre>$message3</pre>";
+pcntl_signal(SIGTERM, 'sigint');
 }
 
 ?>
