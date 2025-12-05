@@ -20,11 +20,6 @@ $varfreq1_sanitized=filter_var($_POST['freq1'], FILTER_SANITIZE_NUMBER_INT);
 $varfreq_sanitized=filter_var($_POST['freq'], FILTER_SANITIZE_NUMBER_INT);
 $varip=$_SERVER['REMOTE_ADDR'];
 $varip_sanitized=htmlspecialchars($varip, ENT_QUOTES, 'UTF-8');
-
-
-
-
-
 $varcommand="sudo /bin/bash /var/www/html/scripts/fmradio.sh";
 $varspace=" ";
 $vardot=".";
@@ -36,7 +31,8 @@ $f=$varcommand.$varspace.$vvarfreq1_sanitized.$vardot.$varfreq_sanitized.$varspa
 
    if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternip, $varip_sanitized))) {
  echo "Successfully Started Open VLC on client at address udp://@0.0.0.0:12345";
-
+$message3=shell_exec($f);
+   echo "<pre>$message3</pre>";
    }
 else {
    echo "Input did not validate";
