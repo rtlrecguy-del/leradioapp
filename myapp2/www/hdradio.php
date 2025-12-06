@@ -27,7 +27,7 @@ $varsubstation_sanitized=filter_var($_POST['substation'], FILTER_SANITIZE_NUMBER
 
 $varcommand="sudo /bin/bash /var/www/html/scripts/hdradio.sh";
 $varspace=" ";
-$f=$varcommand_sanitized.$varspace.$varcommandarams.$varspace.$varsubstation_sanitized.$varspace.$varip_sanitized;
+$f=$varcommand.$varspace.$varcommandarams.$varspace.$varsubstation_sanitized.$varspace.$varip_sanitized;
    $varpatternfreq1="/^\d{1,3}/";
    $varpatternfreq="/^\d{1,3}$/";
    $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
