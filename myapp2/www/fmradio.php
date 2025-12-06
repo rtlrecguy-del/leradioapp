@@ -36,14 +36,14 @@ else {
    echo "Input did not validate";
 }
 }
-if(array_key_exists('stopplay', $_POST)) {
+if(array_key_exists('stopsdradio', $_POST)) {
    echo "Sending Message to Stop Service";
-$command="sudo /bin/bash /var/www/html/scripts/sigintplay.sh";
+$command="sudo /bin/bash /var/www/html/scripts/stopsdradio.sh";
 $message3=shell_exec($f);
 }
-   if(array_key_exists('stoprec', $_POST)) {
+   if(array_key_exists('stophdradio', $_POST)) {
    echo "Sending Message to Stop Service";
-$f="sudo /bin/bash /var/www/html/scripts/sigintrec.sh";
+$f="sudo /bin/bash /var/www/html/scripts/stophdradio.sh";
 $message3=shell_exec($f);
 }
 ?>
@@ -79,8 +79,8 @@ fillSelect("../txtfiles/g1.txt","gain");
 </div>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
-<input type="submit" name="stopplay" value="Stop Radio"/>
-<input type="submit" name="stoprec" value="Stop Recordings"/>
+<input type="submit" name="stopsdradio" value="Stop Radio"/>
+<input type="submit" name="stophdradio" value="Stop Recordings"/>
 </form>
 </body>
 </html>
