@@ -1,3 +1,12 @@
+<?php
+
+
+if(array_key_exists('stoptuners', $_POST)) {
+   echo "Sending Message to Stop Service";
+$f="sudo /bin/bash /var/www/html/scripts/stoptuners.sh";
+$message3=shell_exec($f);
+}
+
 <html>
   <head>
   </head>
