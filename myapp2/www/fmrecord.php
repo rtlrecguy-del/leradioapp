@@ -122,8 +122,8 @@ fillSelect("../txtfiles/cday.txt","dayofshow");
 </br></br>
 
 <input type="submit" name="dcron" value="Record FM"/>
-<input type="submit" name="stopsdradio" value="Stop Play"/>
-<input type="submit" name="stophdradio" value="Stop Recording"/>
+<input type="submit" name="stopsdradio" value="Stop SD Radio"/>
+<input type="submit" name="stophdradio" value="Stop HD Radio"/>
 </form>
 </body>
 </html>
