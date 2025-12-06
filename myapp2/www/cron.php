@@ -14,8 +14,7 @@ if(array_key_exists('lcron', $_POST)) {
 echo "</br>Schedule for CRON JOB.   Day|Hour|Minute|Station</br>";
 $command_output=shell_exec('crontab -l | cat -n');
    if (!empty($command_output)) {
-$sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
-echo $sanitized_output;
+echo "$command_output;"
 }}
 if(array_key_exists('dcronbtn', $_POST)) {
     $vardel=$_POST['del'];
