@@ -12,10 +12,9 @@ if(array_key_exists('dcron', $_POST)) {
 
 $varfreq1_sanitized=filter_var($_POST['freq1'], FILTER_SANITIZE_NUMBER_INT);
 $varfreq_sanitized=filter_var($_POST['freq'], FILTER_SANITIZE_NUMBER_INT);
-   
-$varcommanderiod=".";
-$varcommandarams=$varfreq.$varcommanderiod.$varfreq1;
-$varcommandparams_sanitized=htmlspecialchars($varcommandparams, ENT_QUOTES, 'UTF-8');
+
+$varperiod=".";
+$varcommandarams=$varfreq_sanitized.$varperiod.$varfreq1_sanitized;
 
 
 
@@ -25,22 +24,21 @@ $vargain_sanitized=htmlspecialchars($vargain, ENT_QUOTES, 'UTF-8');
 
 $varhour=$_POST['hour'];
 $varhour_sanitized=htmlspecialchars($varhour, ENT_QUOTES, 'UTF-8');
-   
+
 $vardayofshow_sanitized=filter_var($_POST['vardayofshow'], FILTER_SANITIZE_NUMBER_INT);
 
 $varminute_sanitized=filter_var($_POST['varminute'], FILTER_SANITIZE_NUMBER_INT);
 
 $varcommand="/bin/bash /var/www/html/scripts/fmcron.sh";
 $varspace=" ";
-$f=$varcommand.$varspace.$varcommandarams_sanitized.$varspace.$varhour_sanitized.$varspace.$vardayofshow_sanitized.$varspace.$vargain_sanitized.$varspace.$varminute_sanitized;
+$f=$varcommand.$varspace.$varcommandarams.$varspace.$varhour_sanitized.$varspace.$vardayofshow_sanitized.$varspace.$vargain_sanitized.$varspace.$varminute_sanitized;
    $varpatternfreq1="/^\d{1,3}$/";
    $vargain="/^\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}$/";
    $varpatternhour="/^(?:[1-9]|[1-5]\d|24)$/";
    $varpatternminute="/^(?:[1-9]|[1-5]\d|60)$/";
    $varpatterndayofshow="/^.{1,3}$/";
-if ((preg_match($varpatternfreq1, $varfreq1) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatternminute, $varminute_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatterndayofshow, $vardayofshow_sanitized))) {
-  echo "Successfully Scheduled Recording";
+if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatternminute, $varminute_sanitized>  echo "Successfully Scheduled Recording";
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
 }
