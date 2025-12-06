@@ -32,7 +32,7 @@ $varminute_sanitized=filter_var($_POST['minute'], FILTER_SANITIZE_NUMBER_INT);
 
 $varcommand="/bin/bash /var/www/html/scripts/fmcron.sh";
 $varspace=" ";
-$f=$varcommand.$varspace.$varcommandarams.$varspace.$varhour_sanitized.$varspace.$vardayofshow_sanitized.$varspace.$vargain_sanitized.$varspace.$varminute_sanitized;
+$f=$varcommand.$varspace.$varcommandarams.$varspace.$varhour_sanitized.$varspace.$varminute_sanitized.$varspace.$vardayofshow_sanitized.$varspace.$vargain_sanitized;
    $varpatternfreq1="/^\d{1,3}$/";
    $vargain="/^\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}$/";
