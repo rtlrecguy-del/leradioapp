@@ -1,6 +1,8 @@
 #!/bin/bash
-/usr/bin/ps -eo pid | grep ffmpeg | grep -v "grep" | grep -v "/var/www/html/scripts/recordings" | while IFS= read -r line; do
-if [[ -n "$line" ]]; then
-kill -s SIGINT "$fline"
+/usr/bin/ps -eo pid,command | grep ffmpeg | grep "/var/www/html/scripts/recordings" | while IFS= read -r line; do
+pid_awk=$(echo "$line" | awk '{print $1}')
+if [[ -n "$pid_awk" ]]; then
+kill -s SIGINT "$pid_awk"
 fi
 done
+echo "$pid_awk"
