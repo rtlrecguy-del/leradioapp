@@ -39,7 +39,7 @@ $f=$varcommand.$varspace.$varcommandarams.$varspace.$varhour_sanitized.$varspace
    $varpatternhour="/^(?:[1-9]|[1-5]\d|24)$/";
    $varpatternminute="/^(?:[1-9]|[1-5]\d|60)$/";
    $varpatterndayofshow="/^.{1,3}$/";
-if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatternminute, $varminute_sanitized>  echo "Successfully Scheduled Recording";
+if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatternminute, $varminute_sanitized))) {
    $message3=shell_exec($f);
    echo "Sucessfully scheduled records</br>";
 }
