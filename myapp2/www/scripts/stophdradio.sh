@@ -5,5 +5,4 @@ if [[ -n "$pid_awk" ]]; then
 kill -s SIGINT "$pid_awk"
 fi
 done
-echo "$pid_awk"
 pkill -9 nrsc5 > /dev/null 2>&1
