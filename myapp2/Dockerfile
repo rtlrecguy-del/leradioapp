@@ -9,6 +9,7 @@ COPY ./www /var/www/html
 RUN htpasswd -cb /etc/apache2/.htpasswd myavr2 myavr2radio
 RUN mkdir /app
 WORKDIR /app
+RUN mkdir /var/www/html/dist
 RUN git clone https://github.com/theori-io/nrsc5.git && cd nrsc5 && mkdir build && cd build && cmake .. && make && make install && ldconfig
 COPY ./entrypoint.sh /entrypoint.sh
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/delcron.sh*" >> /etc/sudoers
