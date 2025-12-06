@@ -7,6 +7,8 @@ RUN apt install -y cron rtl-sdr
 RUN echo -e "\nblacklist dvb_usb_rtl28xxu\nblacklist rtl2832\nblacklist rtl2830" >> /etc/modprobe.d/blacklist.conf
 COPY ./www /var/www/html
 RUN htpasswd -cb /etc/apache2/.htpasswd myavr2 myavr2radio
+RUN mkdir /app
+WORKDIR /app
 RUN git clone https://github.com/theori-io/nrsc5.git && cd nrsc5 && mkdir build && cd build && cmake .. && make && make install && ldconfig
 COPY ./entrypoint.sh /entrypoint.sh
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/delcron.sh*" >> /etc/sudoers
@@ -34,7 +36,6 @@ RUN chmod -R +x /var/www/html/scripts/
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 WORKDIR /var/www/html/noisemod
 RUN git clone https://github.com/GregorR/rnnoise-models.git
-RUN mkdir /app
 WORKDIR /app
 RUN chmod -R 755 /var/www/html
 RUN chmod +x /entrypoint.sh
