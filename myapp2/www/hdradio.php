@@ -93,7 +93,6 @@ fillSelect("../txtfiles/sub.txt","substation")
 </div>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
-<label for="pid">Stop PID number:</label>
   <input type="submit" name="stoprec" value="Stop recordings"/>
    <input type="submit" name="stopplay" value="Stop Radio"/>
 </form>
