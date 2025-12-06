@@ -22,6 +22,14 @@ if (is_dir($directoryPath)) {
 } else {
     echo '<p>Error: Directory not found.</p>';
 }}
+if(array_key_exists('playvideo', $_POST)) {
+   echo "Sending Message to Stop Service";
+$f="sudo /bin/bash /var/www/html/scripts/playvideo.sh";
+$message3=shell_exec($f);
+}
+
+
+    
 ?>
 <html>
 
