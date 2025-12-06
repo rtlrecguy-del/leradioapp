@@ -38,7 +38,7 @@ else {
 }
 if(array_key_exists('stopsdradio', $_POST)) {
    echo "Sending Message to Stop Service";
-$command="sudo /bin/bash /var/www/html/scripts/stopsdradio.sh";
+$f="sudo /bin/bash /var/www/html/scripts/stopsdradio.sh";
 $message3=shell_exec($f);
 }
    if(array_key_exists('stophdradio', $_POST)) {
