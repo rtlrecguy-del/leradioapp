@@ -1,10 +1,23 @@
 <?php
 if(array_key_exists('lcron', $_POST)) {
 echo "</br>Schedule for CRON JOB.   Day|Hour|Minute|Station</br>";
-$command_output=shell_exec('crontab -l | cat -n');
-   if (!empty($command_output)) {
-echo "$command_output;"
-}} 
+$command_output=shell_exec('crontab -l');
+if(!empty($command_output)) {
+$lines=explode("\n", $command_output);
+$count=0;
+foreach ($lines as $line) {
+ $count++;
+if (!empty($line)) {
+        echo "ID=$count   ". $line."</br>";
+    }
+}
+
+}
+
+
+
+
+}
 if(array_key_exists('dcronbtn', $_POST)) {
     $vardel=$_POST['del'];
 
