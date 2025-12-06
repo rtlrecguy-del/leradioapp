@@ -41,7 +41,7 @@ $varminute_sanitized=htmlspecialchars($varminute, ENT_QUOTES, 'UTF-8');
    
 
 
-$varcommand="/bin/bash /var/www/html/scripts/hdcron.sh";
+$varcommand="sudo /bin/bash /var/www/html/scripts/hdcron.sh";
 $varspace=" ";
 $f=$varcommand.$varspace.$varfreq1_sanitized.$varspace.$varfreq_sanitized.$varspace.$varsubstation_sanitized.$varspace.$varhour_sanitized.$varspace.$varminute_sanitized.$varspace.$vardayofshow_sanitized;
    $varpatternfreq1="/^\d{1,3}$/";
