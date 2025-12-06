@@ -1,4 +1,5 @@
 <?php
+if(array_key_exists('dcron', $_POST)) {
 $directoryPath = './var/www/html/recordings/'; 
 
 if (is_dir($directoryPath)) {
@@ -20,7 +21,7 @@ if (is_dir($directoryPath)) {
     echo '</select>';
 } else {
     echo '<p>Error: Directory not found.</p>';
-}
+}}
 ?>
 <html>
 
