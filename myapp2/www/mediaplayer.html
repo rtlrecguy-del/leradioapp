@@ -3,10 +3,9 @@
   </head>
 
   <body>
-    <script src="../hls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
     <center>
-      <h1>Hls.js demo - basic usage</h1>
       <video height="600" id="video" controls></video>
     </center>
 
@@ -16,7 +15,7 @@
         var hls = new Hls({
           debug: true,
         });
-        hls.loadSource('hls/output.m3u8');
+        hls.loadSource('../hls/output.m3u8');
         hls.attachMedia(video);
         hls.on(Hls.Events.MEDIA_ATTACHED, function () {
           video.muted = true;
@@ -24,10 +23,11 @@
         });
       }
       else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = 'hls/output.m3u8';
+        video.src = '../hls/output.m3u8';
         video.addEventListener('play', function () {
           video.play();
         });
       }
     </script>
 </html>
+
