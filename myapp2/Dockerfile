@@ -23,22 +23,24 @@ RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/tunerstatus.sh"
 RUN echo "www-data ALL=NOPASSWD: /bin/bin/pkill mpv" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill rtl_fm" >> /etc/sudoers
 RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill ffmpeg" >> /etc/sudoers
-RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill nrsc5" >> /etc/sudoers
+RUN echo "www-data ALL=NOPASSWD: /usr/bin/pkill nrsc5"RUN chown -R www-data:www-data /var/www/html/ >> /etc/sudoers
 RUN rm /etc/localtime
 RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN dpkg-reconfigure tzdata
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 RUN usermod -aG sudo www-data
-RUN chown -R www-data:www-data /var/www/html/
+WORKDIR /var/www/html/dist
+RUN git clone https://github.com/video-dev/hls.js.git
+WORKDIR /app
 EXPOSE 80
 EXPOSE 12345
 RUN chmod -R +x /var/www/html/scripts/
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 WORKDIR /var/www/html/noisemod
 RUN git clone https://github.com/GregorR/rnnoise-models.git
-WORKDIR /app
 RUN chmod -R 755 /var/www/html
 RUN chmod +x /entrypoint.sh
-RUN usermod -s /bin/bash www-data
+RUN chown -R www-data:www-data /var/www/html/
+WORKDIR /app
 ENTRYPOINT ["/entrypoint.sh"]
  
