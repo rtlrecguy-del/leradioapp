@@ -14,7 +14,7 @@ $varfreq1_sanitized=filter_var($_POST['freq1'], FILTER_SANITIZE_NUMBER_INT);
 $varfreq_sanitized=filter_var($_POST['freq'], FILTER_SANITIZE_NUMBER_INT);
 
 $varperiod=".";
-$varcommandarams=$varfreq_sanitized.$varperiod.$varfreq1_sanitized;
+$varcommandarams=$varfreq1_sanitized.$varperiod.$varfreq_sanitized;
 
 
 
