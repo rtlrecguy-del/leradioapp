@@ -44,14 +44,14 @@ else {
  
 
 }
-if(array_key_exists('stopplay', $_POST)) {
+if(array_key_exists('stopsdradio', $_POST)) {
    echo "Sending Message to Stop Service";
-$f="sudo /bin/bash /var/www/html/scripts/sigintplay.sh";
+$f="sudo /bin/bash /var/www/html/scripts/stopsdradio.sh";
 $message3=shell_exec($f);
 }
-   if(array_key_exists('stoprec', $_POST)) {
+   if(array_key_exists('stophdradio', $_POST)) {
    echo "Sending Message to Stop Service";
-$f="sudo /bin/bash /var/www/html/scripts/sigintrec.sh";
+$f="sudo /bin/bash /var/www/html/scripts/stophdradio.sh";
 $message3=shell_exec($f);
 }
 
@@ -92,8 +92,8 @@ fillSelect("../txtfiles/sub.txt","substation")
 </div>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
-  <input type="submit" name="stoprec" value="Stop recordings"/>
-   <input type="submit" name="stopplay" value="Stop Radio"/>
+  <input type="submit" name="stopsdradio" value="Stop recordings"/>
+   <input type="submit" name="stophdradio" value="Stop Radio"/>
 </form>
 </body>
 
