@@ -60,16 +60,12 @@ else {
    echo "Your input didn't validate";
 }
 }
-if(array_key_exists('stopsdradio', $_POST)) {
+if(array_key_exists('stoptuners', $_POST)) {
    echo "Sending Message to Stop Service";
-$command="sudo /bin/bash /var/www/html/scripts/stopsdradio.sh";
+$command="sudo /bin/bash /var/www/html/scripts/stoptuners.sh";
 $message3=shell_exec($f);
 }
-   if(array_key_exists('stophdradio', $_POST)) {
-   echo "Sending Message to Stop Service";
-$f="sudo /bin/bash /var/www/html/scripts/stophdradio.sh";
-$message3=shell_exec($f);
-}
+
 ?>
 <html>
 <head>
@@ -126,8 +122,7 @@ fillSelect("../txtfiles/sub.txt","substation");
 
 
 <input type="submit" name="dcron" value="Schedule Recording"/>
-  <input type="submit" name="stopsdradio" value="Stop SD Radio"/>
    
-   <input type="submit" name="stophdradio" value="Stop HD Radio"/>
+   <input type="submit" name="stoptuners" value="Stop Tuners"/>
 </form>
 </html>
