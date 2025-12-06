@@ -38,14 +38,10 @@ else {
 }
 if(array_key_exists('stopsdradio', $_POST)) {
    echo "Sending Message to Stop Service";
-$f="sudo /bin/bash /var/www/html/scripts/stopsdradio.sh";
+$f="sudo /bin/bash /var/www/html/scripts/stoptuners.sh";
 $message3=shell_exec($f);
 }
-   if(array_key_exists('stophdradio', $_POST)) {
-   echo "Sending Message to Stop Service";
-$f="sudo /bin/bash /var/www/html/scripts/stophdradio.sh";
-$message3=shell_exec($f);
-}
+
 ?>
 <html>
 <head>
@@ -79,8 +75,7 @@ fillSelect("../txtfiles/g1.txt","gain");
 </div>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
-<input type="submit" name="stopsdradio" value="Stop SD Radio"/>
-<input type="submit" name="stophdradio" value="Stop HD Radio"/>
+<input type="submit" name="stoptuners" value="Stop SD Radio"/>
 </form>
 </body>
 </html>
