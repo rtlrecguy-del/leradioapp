@@ -55,7 +55,7 @@ $message3=shell_exec($f);
 $f="sudo /bin/bash /var/www/html/scripts/sigintrec.sh";
 $message3=shell_exec($f);
 }
-}
+
 
 ?>
 <html>
