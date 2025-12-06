@@ -49,7 +49,7 @@ else {
 }}
 if(array_key_exists('stopplay', $_POST)) {
    echo "Sending Message to Stop Service";
-$command="sudo /bin/bash /var/www/html/scripts/sigintplay.sh";
+$f="sudo /bin/bash /var/www/html/scripts/sigintplay.sh";
 $message3=shell_exec($f);
 }
    if(array_key_exists('stoprec', $_POST)) {
