@@ -79,7 +79,7 @@ fillSelect("../txtfiles/g1.txt","gain");
 </select>
 </div>
 </br>
-<input type="submit" name="dcron" value="Stream Radio"/>
+<input type="submit" name="dcron" value="Stream Radio"/></br></br>
 <label for="pid">Stop PID number:</label>
   <input  type="text" id="pid" name="pid">
 <input type="submit" name="stopplay" value="Stop Radio"/>
