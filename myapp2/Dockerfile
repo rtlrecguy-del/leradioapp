@@ -8,8 +8,7 @@ RUN echo -e "\nblacklist dvb_usb_rtl28xxu\nblacklist rtl2832\nblacklist rtl2830"
 COPY ./www /var/www/html
 RUN htpasswd -cb /etc/apache2/.htpasswd myavr2 myavr2radio
 RUN mkdir /app
-WORKDIR /app
-RUN mkdir /var/www/html/dist
+WORKDIR /var/www/html
 RUN git clone https://github.com/theori-io/nrsc5.git && cd nrsc5 && mkdir build && cd build && cmake .. && make && make install && ldconfig
 COPY ./entrypoint.sh /entrypoint.sh
 RUN echo "www-data ALL=NOPASSWD: /bin/bash /var/www/html/scripts/delcron.sh*" >> /etc/sudoers
@@ -31,7 +30,6 @@ RUN dpkg-reconfigure tzdata
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 RUN usermod -aG sudo www-data
 RUN git clone https://github.com/video-dev/hls.js.git
-WORKDIR /app
 EXPOSE 80
 EXPOSE 12345
 RUN chmod -R +x /var/www/html/scripts/
