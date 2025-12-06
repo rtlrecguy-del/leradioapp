@@ -1,7 +1,7 @@
 <?php
 $command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerstatus.sh');
 if (empty($command_output)) {
-   echo "Nothing is recording or playing</br>";
+   echo "Nothing is recording or playing";
 }
 else {
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
@@ -12,8 +12,8 @@ if(array_key_exists('dcron', $_POST)) {
 
 $varfreq1_sanitized=filter_var($_POST['freq1'], FILTER_SANITIZE_NUMBER_INT);
 $varfreq_sanitized=filter_var($_POST['freq'], FILTER_SANITIZE_NUMBER_INT);
-   
-$varperiod=".";
+
+$vardot=".";
 
 
 
@@ -29,21 +29,21 @@ $varsubstation_sanitized=htmlspecialchars($varsubstation, ENT_QUOTES, 'UTF-8');
 
 $varhour=$_POST['hour'];
 $varhour_sanitized=htmlspecialchars($varhour, ENT_QUOTES, 'UTF-8');
-   
+
 $vardayofshow=$_POST['dayofshow'];
 $vardayofshow_sanitized=htmlspecialchars($vardayofshow, ENT_QUOTES, 'UTF-8');
 
    $vargain=$_POST['gain'];
 $vargain_sanitized=htmlspecialchars($vargain, ENT_QUOTES, 'UTF-8');
-   
+
 $varminute=$_POST['minute'];
 $varminute_sanitized=htmlspecialchars($varminute, ENT_QUOTES, 'UTF-8');
-   
 
 
-$varcommand="sudo /bin/bash /var/www/html/scripts/hdcron.sh";
+
+$varcommand="/bin/bash /var/www/html/scripts/hdcron.sh";
 $varspace=" ";
-$f=$varcommand.$varspace.$varfreq1_sanitized.$varspace.$varfreq_sanitized.$varspace.$varsubstation_sanitized.$varspace.$varhour_sanitized.$varspace.$varminute_sanitized.$varspace.$vardayofshow_sanitized;
+$f=$varcommand.$varspace.$varfreq1_sanitized.$vardot.$varfreq_sanitized.$varspace.$varsubstation_sanitized.$varspace.$varhour_sanitized.$varspace.$varminute_sanitized.$varspace.$vardayofshow_sanitized;
    $varpatternfreq1="/^\d{1,3}$/";
    $vargain="/^\d{1,2}\.\d{1}$/";
    $varpatternfreq="/^\d{1,3}$/";
@@ -51,8 +51,7 @@ $f=$varcommand.$varspace.$varfreq1_sanitized.$varspace.$varfreq_sanitized.$varsp
    $varpatternminute="/^(?:[1-9]|[1-5]\d|60)$/";
    $varpatternsubstation="/[1-4]/";
    $varpatterndayofshow="/^.{1,3}$/";
-if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatternminute, $varminute_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatterndayofshow, $vardayofshow_sanitized) && preg_match($varpatternsubstation, $varsubstation_sanitized))) {
-  echo "Successfully Scheduled Recording"; 
+if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatternminute, $varminute_sanitized) && preg_match($varpatter>  echo "Successfully Scheduled Recording";
    $message3=shell_exec($f);
    echo "<pre>$message3</pre>";
 }
