@@ -74,9 +74,8 @@ fillSelect("../txtfiles/g1.txt","gain");
 </select>
 </div>
 </br>
-<input type="submit" name="dcron" value="Stream Radio"/>
-<input type="submit" name="stoptuners" value="Stop Tuners"/>
-   <a href="../mediaplayer.html">Play File</a>
+<input type="submit" name="dcron" value="Stream Radio"/></br></br>
+<a href="../mediaplayer.html">Play File</a>
 </form>
 </body>
 </html>
