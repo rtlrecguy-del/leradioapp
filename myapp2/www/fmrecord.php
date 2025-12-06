@@ -122,8 +122,7 @@ fillSelect("../txtfiles/cday.txt","dayofshow");
 </br></br>
 
 <input type="submit" name="dcron" value="Record FM"/>
-<label for="pid">Stop PID number:</label>
-  <input  type="text" id="pid" name="pid">
+<input type="submit" name="stopplay" value="Stop Recording"/>
 <input type="submit" name="stoprec" value="Stop Recording"/>
 </form>
 </body>
