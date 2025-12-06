@@ -26,7 +26,7 @@ $varspace=" ";
 $varcommand="/bin/bash /var/www/html/scripts/delcron.sh";
 $f=$varcommand.$varspace.$vardel;
 $vardelpattern="/^(?:[1-9]|[1-5]\d|24)$/";
-if (preg_match($vardelpattern,  $vardel) {
+if (preg_match($vardelpattern,  $vardel)) {
 $message1=shell_exec($f);
    echo "<pre>$message1</pre>";
  echo "Successfully deleted";
