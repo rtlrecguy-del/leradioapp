@@ -25,9 +25,9 @@ $vargain_sanitized=htmlspecialchars($vargain, ENT_QUOTES, 'UTF-8');
 $varhour=$_POST['hour'];
 $varhour_sanitized=htmlspecialchars($varhour, ENT_QUOTES, 'UTF-8');
 
-$vardayofshow_sanitized=filter_var($_POST['vardayofshow'], FILTER_SANITIZE_NUMBER_INT);
+$vardayofshow_sanitized=filter_var($_POST['dayofshow'], FILTER_SANITIZE_NUMBER_INT);
 
-$varminute_sanitized=filter_var($_POST['varminute'], FILTER_SANITIZE_NUMBER_INT);
+$varminute_sanitized=filter_var($_POST['minute'], FILTER_SANITIZE_NUMBER_INT);
 
 $varcommand="/bin/bash /var/www/html/scripts/fmcron.sh";
 $varspace=" ";
