@@ -30,7 +30,6 @@ RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN dpkg-reconfigure tzdata
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 RUN usermod -aG sudo www-data
-WORKDIR /var/www/html/dist
 RUN git clone https://github.com/video-dev/hls.js.git
 WORKDIR /app
 EXPOSE 80
