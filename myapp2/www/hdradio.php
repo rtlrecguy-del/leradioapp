@@ -18,17 +18,16 @@ $varip_sanitized=htmlspecialchars($varip, ENT_QUOTES, 'UTF-8');
    
 $varperiod=".";
 $varcommandarams=$varfreq1_sanitized.$varperiod.$varfreq_sanitized;
-$varcommandparams_sanitized=htmlspecialchars($varcommandparams, ENT_QUOTES, 'UTF-8');
 
 
 
-$varsubstation_sanitized=filter_var($_POST['varsubstation'], FILTER_SANITIZE_NUMBER_INT);
+$varsubstation_sanitized=filter_var($_POST['substation'], FILTER_SANITIZE_NUMBER_INT);
 
 
 
 $varcommand="sudo /bin/bash /var/www/html/scripts/hdradio.sh";
 $varspace=" ";
-$f=$varcommand_sanitized.$varspace.$varcommandarams_sanitized.$varspace.$varsubstation_sanitized.$varspace.$varip_sanitized;
+$f=$varcommand_sanitized.$varspace.$varcommandarams.$varspace.$varsubstation_sanitized.$varspace.$varip_sanitized;
    $varpatternfreq1="/^\d{1,3}/";
    $varpatternfreq="/^\d{1,3}$/";
    $varpatternip="/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/";
