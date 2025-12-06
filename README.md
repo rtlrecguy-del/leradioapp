@@ -10,7 +10,7 @@ Example Video:
 
 https://www.youtube.com/playlist?list=PL7Sqq_-LtHrpUMhH990X8fflRT2970h6X
 
-I was able to get it running on chromebook with crostini and ffplay or android app.  It worked with little effort.   I need to look more into security setup but using it with android app on portable touchscreen is nice. 
+I was able to get it running on chromebook with crostini running Docker and the client running ffplay or android app.  It worked with little effort.   I need to look more into security setup but using it with android app on portable touchscreen is nice. 
 
 Since no internet is needed for this Docker Container for security the Docker Host can be blocked from the Internet at a router and Only Accessible by Local Area Network. 
 
