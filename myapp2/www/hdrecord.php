@@ -1,7 +1,7 @@
 <?php
 $command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerstatus.sh');
 if (empty($command_output)) {
-   echo "Nothing is recording or playing";
+   echo "Nothing is recording or playing</br>";
 }
 else {
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
