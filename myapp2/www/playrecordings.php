@@ -33,7 +33,40 @@ $message3=shell_exec($f);
 ?>
     
 <html>
+   <head>
+  <link rel="stylesheet" href="../styles.css">
+</head>
 
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+    <center>
+      <video height="200" id="video" controls></video>
+    </center>
+
+    <script>
+      var video = document.getElementById('video');
+      if (Hls.isSupported()) {
+        var hls = new Hls({
+          debug: true
+        });
+        hls.loadSource('../hls/output.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+          video.muted = true;
+          video.play();
+        });
+      }
+      else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = '../hls/output.3u8';
+        video.addEventListener('play', function () {
+          video.play();
+        });
+      }
+    </script>
+  </br></br>
+     <input type="submit" name="stoptuners" value="Stop Tuners"/>
+<input type="submit" name="playvideo" value="Play Video"/>
 
 
   
