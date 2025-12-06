@@ -36,7 +36,7 @@ else {
    echo "Input did not validate";
 }
 }
-if(array_key_exists('stopsdradio', $_POST)) {
+if(array_key_exists('stoptuners', $_POST)) {
    echo "Sending Message to Stop Service";
 $f="sudo /bin/bash /var/www/html/scripts/stoptuners.sh";
 $message3=shell_exec($f);
@@ -75,7 +75,7 @@ fillSelect("../txtfiles/g1.txt","gain");
 </div>
 </br>
 <input type="submit" name="dcron" value="Stream Radio"/>
-<input type="submit" name="stoptuners" value="Stop SD Radio"/>
+<input type="submit" name="stoptuners" value="Stop Tuners"/>
 </form>
 </body>
 </html>
