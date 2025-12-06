@@ -1,11 +1,12 @@
 <?php
 $command_output=shell_exec('sudo /bin/bash /var/www/html/scripts/tunerstatus.sh');
 if (empty($command_output)) {
-   echo "Nothing is recording or playing";
+   echo "Nothing is recording or playing</br>";
 }
 else {
 $sanitized_output = htmlspecialchars($command_output, ENT_QUOTES | ENT_HTML5, 'UTF-8');
-echo $sanitized_output;
+echo "$sanitized_output";
+   
 }
 
 if(array_key_exists('dcron', $_POST)) {
@@ -40,13 +41,13 @@ $f=$varcommand.$varspace.$varcommandarams.$varspace.$varhour_sanitized.$varspace
    $varpatterndayofshow="/^.{1,3}$/";
 if ((preg_match($varpatternfreq1, $varfreq1_sanitized) && preg_match($varpatternfreq, $varfreq_sanitized) && preg_match($varpatternhour, $varhour_sanitized) && preg_match($varpatternminute, $varminute_sanitized>  echo "Successfully Scheduled Recording";
    $message3=shell_exec($f);
-   echo "<pre>$message3</pre>";
+   echo "Sucessfully scheduled records</br>";
 }
 else { 
-   echo "Your input didn't validate";
+   echo "Your input didn't validate</br>";
 }}
 if(array_key_exists('stoptuners', $_POST)) {
-   echo "Sending Message to Stop Service";
+   echo "Sending Message to Stop Service</br>";
 $f="sudo /bin/bash /var/www/html/scripts/stoptuners.sh";
 $message3=shell_exec($f);
 }
